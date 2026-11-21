@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapa de Leilões</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <aside id="painel">
+    <header>
+      <h1>Leilões de Gado</h1>
+      <p id="resumo">Carregando…</p>
+    </header>
+
+    <div class="filtros">
+      <input id="busca" type="search" placeholder="Buscar nome, cidade, leiloeira, raça…">
+      <div class="linha">
+        <select id="f-uf"><option value="">Todos os estados</option></select>
+        <select id="f-tipo"><option value="">Todos os tipos</option></select>
+      </div>
+      <div class="linha">
+        <select id="f-modalidade"><option value="">Presencial e virtual</option></select>
+        <select id="f-periodo">
+          <option value="">Qualquer data</option>
+          <option value="7">Próximos 7 dias</option>
+          <option value="30">Próximos 30 dias</option>
+          <option value="90">Próximos 90 dias</option>
+        </select>
+      </div>
+      <button id="perto" type="button">📍 Leilões perto de mim</button>
+      <label class="opcao"><input id="sem-virtuais" type="checkbox"> Esconder leilões virtuais</label>
+      <div class="legenda">
+        <span><span class="pino pino-mini"></span> Local físico</span>
+        <span><span class="pino pino-mini pino-virtual"></span> Virtual (cidade do estúdio)</span>
+      </div>
+    </div>
+
+    <ul id="lista"></ul>
+    <footer id="rodape"></footer>
+  </aside>
+
+  <main id="mapa"></main>
+  <button id="alternar" type="button" aria-label="Mostrar lista">☰ Lista</button>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="leiloes.js" charset="utf-8"></script>
+  <script src="app.js"></script>
+</body>
+</html>
