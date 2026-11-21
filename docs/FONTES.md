@@ -146,9 +146,10 @@ Em cada estado, confira três coisas: a **federação da agricultura** (calendá
 
 | ✓ | Associação | Situação | Observação |
 |---|---|---|---|
-| [ ] | ABCZ (zebuínos: Nelore, Gir, Guzerá…) | a conferir | Agenda de leilões e ExpoZebu |
-| [ ] | ACNB (Nelore) | a conferir | |
-| [ ] | Associação Brasileira de Angus | a conferir | Forte no Sul |
+| [ ] | ABCZ (zebuínos: Nelore, Gir, Guzerá…) | **não coletar** | O robots.txt bloqueia o ClaudeBot. Tem agenda de eventos homologados e a "relação dos associados do Sindicato dos Leiloeiros Rurais": pedir direto |
+| [x] | **ACNB (Nelore)** | **coletor pronto** | `acnb_nelore.py`. [Agenda de leilões oficializados](https://www.nelore.org.br/agenda-de-leiloes/) com local e cidade reais e o promotor. Só a página 1 (10 próximos): a paginação usa /wp-admin/, bloqueado no robots.txt. Site lento (cerca de 20 s) |
+| [ ] | Associação Brasileira de Angus | **não coletar** | O robots.txt bloqueia todos os robôs (`Disallow: /`) |
+| [ ] | Girolando | **não coletar** | O robots.txt bloqueia os robôs da Anthropic. Tem /eventos-ranking/leiloes e /eventos/leiloes-chancelados: pedir direto |
 | [ ] | Associação Brasileira de Hereford e Braford | a conferir | Sul |
 | [ ] | Girolando | a conferir | Leite |
 | [ ] | ABCBRH (Holandês) | a conferir | Leite |

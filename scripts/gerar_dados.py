@@ -50,7 +50,7 @@ def localizar(municipios: dict, cidade: str, uf: str):
 # Ordem de prioridade quando o mesmo leilão vem de várias fontes: a primeira
 # fica como base e as seguintes só preenchem campos vazios.
 # Sites das próprias leiloeiras vêm primeiro: trazem o local exato do leilão.
-PRIORIDADE = ["central_leiloes", "leiloboi", "ln_leiloes",
+PRIORIDADE = ["central_leiloes", "leiloboi", "ln_leiloes", "acnb_nelore",
               "canal_do_boi", "programa_leiloes", "canal_do_criador"]
 
 PALAVRAS_IGNORADAS = {"leilao", "virtual", "de", "do", "da", "dos", "das", "e", "o", "a",
