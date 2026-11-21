@@ -59,6 +59,31 @@
     marcadores.set(l.id, m);
   });
 
+  // ---------- Recintos (locais fixos com leilões frequentes, sem data) ----------
+  const camadaRecintos = L.layerGroup();
+  const ICONE_RECINTO = L.divIcon({
+    className: "", html: '<span class="recinto"></span>',
+    iconSize: [16, 16], iconAnchor: [8, 8], popupAnchor: [0, -8],
+  });
+  (window.RECINTOS || []).forEach((r) => {
+    const maps = linkSeguro(r.maps), site = linkSeguro(r.site);
+    L.marker([r.lat, r.lng], { title: r.nome, icon: ICONE_RECINTO, zIndexOffset: -100 })
+      .bindPopup(`<div class="popup">
+        <h3>${esc(r.nome)}</h3>
+        <p>Recinto de leilão · ${esc(r.cidade)}/${esc(r.uf)}</p>
+        <p>${r.dias ? "<b>" + esc(r.dias) + "</b>" : "Dias dos leilões não informados: confirme com o recinto."}</p>
+        ${r.telefone ? `<p>Telefone: ${esc(r.telefone)}</p>` : ""}
+        ${r.obs ? `<p>${esc(r.obs)}</p>` : ""}
+        ${site ? `<p><a href="${esc(site)}" target="_blank" rel="noopener">Site / Instagram →</a></p>` : ""}
+        ${maps ? `<p><a href="${esc(maps)}" target="_blank" rel="noopener">Abrir no Google Maps →</a></p>` : ""}
+      </div>`)
+      .addTo(camadaRecintos);
+  });
+  const mostrarRecintos = () => $("com-recintos").checked
+    ? camadaRecintos.addTo(mapa) : camadaRecintos.remove();
+  $("com-recintos").addEventListener("input", mostrarRecintos);
+  mostrarRecintos();
+
   // ---------- Filtros ----------
   function preencher(select, valores) {
     [...new Set(valores.filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"))

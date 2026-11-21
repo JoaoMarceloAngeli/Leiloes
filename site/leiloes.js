@@ -2114,3 +2114,44 @@ window.LEILOES = [
   "lng": -51.1691
  }
 ];
+window.RECINTOS = [
+ {
+  "nome": "Firminópolis Leilões",
+  "cidade": "Firminópolis",
+  "uf": "GO",
+  "lat": -16.5926,
+  "lng": -50.2535,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://www.google.com/maps/search/?api=1&query=-16.592600,-50.253500",
+  "obs": "",
+  "fonte": "openstreetmap"
+ },
+ {
+  "nome": "Leilão de Gado Jandaia",
+  "cidade": "Jandaia",
+  "uf": "GO",
+  "lat": -17.0342,
+  "lng": -50.1234,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://www.google.com/maps/search/?api=1&query=-17.034200,-50.123400",
+  "obs": "",
+  "fonte": "openstreetmap"
+ },
+ {
+  "nome": "Mara Rosa Leilões",
+  "cidade": "Mara Rosa",
+  "uf": "GO",
+  "lat": -14.01469,
+  "lng": -49.086151,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ }
+];

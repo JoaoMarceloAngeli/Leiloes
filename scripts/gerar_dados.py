@@ -111,6 +111,22 @@ def ler_leiloes() -> list:
     return leiloes
 
 
+def ler_recintos() -> list:
+    """Locais fixos com leilões frequentes (data/recintos.csv, via scripts/adicionar_recinto.py)."""
+    arq = DADOS / "recintos.csv"
+    if not arq.exists():
+        return []
+    with open(arq, encoding="utf-8-sig") as f:
+        recintos = []
+        for r in csv.DictReader(f):
+            try:
+                r["lat"], r["lng"] = float(r["lat"]), float(r["lng"])
+            except (TypeError, ValueError):
+                continue
+            recintos.append({k: v.strip() if isinstance(v, str) else v for k, v in r.items()})
+    return sorted(recintos, key=lambda r: (r["uf"], r["cidade"], r["nome"]))
+
+
 def main() -> int:
     municipios = carregar_municipios()
     hoje = date.today().isoformat()
@@ -142,15 +158,17 @@ def main() -> int:
         saida.append(l)
 
     saida.sort(key=lambda x: (x["data"], x["hora"]))
+    recintos = ler_recintos()
     SAIDA.parent.mkdir(exist_ok=True)
     SAIDA.write_text(
         "// Arquivo gerado por scripts/gerar_dados.py - não edite à mão\n"
         f"window.LEILOES_ATUALIZADO = {json.dumps(hoje)};\n"
-        f"window.LEILOES = {json.dumps(saida, ensure_ascii=False, indent=1)};\n",
+        f"window.LEILOES = {json.dumps(saida, ensure_ascii=False, indent=1)};\n"
+        f"window.RECINTOS = {json.dumps(recintos, ensure_ascii=False, indent=1)};\n",
         encoding="utf-8",
     )
     print(f"{len(saida)} leilões gravados em {SAIDA.relative_to(RAIZ)} "
-          f"({duplicados} duplicados entre fontes foram unidos)")
+          f"({duplicados} duplicados entre fontes foram unidos), {len(recintos)} recintos")
     if sem_local:
         print("Cidade não encontrada (confira nome/UF):", *sem_local, sep="\n  - ")
     return 0

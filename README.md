@@ -26,6 +26,19 @@ tipo, modalidade e período, busca, e "leilões perto de mim".
 | `scripts/coletores/modelo_coletor.py` | Modelo para criar um coletor por fonte |
 | `site/` | O mapa (Leaflet + OpenStreetMap, gratuito) |
 
+## Recintos de leilão (quadrados laranja)
+
+Muitos leilões presenciais do interior, como os semanais em Goiás, acontecem sempre no mesmo recinto
+e não aparecem em nenhum site. Esses locais ficam no mapa como **recintos**, sem data:
+
+```
+python scripts/adicionar_recinto.py "https://maps.app.goo.gl/..." --dias "Toda sexta, 20h" --telefone "(62) ..."
+python scripts/gerar_dados.py
+```
+
+No Google Maps, abra o local, toque em **Compartilhar** e copie o link. O script lê nome e coordenadas
+do link, acha o município mais próximo e grava em `data/recintos.csv`, que também pode ser editado à mão.
+
 ## Próximos passos
 
 - Criar coletores para as agendas das principais leiloeiras e portais.
