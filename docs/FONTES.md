@@ -85,6 +85,10 @@ Ordem sugerida: **1 → 2 → 3 → 4 → 5 → 6**. Os agregadores cobrem muita
 Em cada estado, confira três coisas: a **federação da agricultura** (calendário de eventos), o **governo estadual**
 (calendário oficial) e as **leiloeiras locais** (pelo diretório do Compre Rural e pela Junta Comercial, na seção 6).
 
+> **Federações (conferido em 21/11/2026):** Famasul, Famato, FAEG, Faepa, FAET e FAERO não publicam agenda de leilões.
+> Os leilões presenciais do interior (Norte e Centro-Oeste) são divulgados pelas próprias leiloeiras, quase sempre
+> só no Instagram/WhatsApp. O caminho é pedir a agenda direto, ou cadastrar à mão em `data/leiloes.csv`.
+
 ### Sul
 | ✓ | UF | Fonte | Link | Situação |
 |---|---|---|---|---|
@@ -98,17 +102,17 @@ Em cada estado, confira três coisas: a **federação da agricultura** (calendá
 ### Centro-Oeste
 | ✓ | UF | Fonte | Link | Situação |
 |---|---|---|---|---|
-| [ ] | MS | Famasul | — | a conferir |
+| [x] | MS | Famasul | [eventos](https://portal.sistemafamasul.com.br/eventos) | **sem leilões**: a agenda traz só exposições e rodeios dos sindicatos rurais (2 eventos em 21/11/2026) |
 | [ ] | MS | Triângulo Leilões Rurais (Camapuã, Figueirão, Alcinópolis, Cassilândia, Campo Grande) | [Compre Rural](https://comprerural.com/triangulo-leiloes-camapua-ms/) | a conferir |
 | [ ] | MS | MS Pecuária (Campo Grande) | — | a conferir |
 | [ ] | MS | LN Leilões (Aquidauana) | — | a conferir |
 | [ ] | MS | Leilosin (Paranaíba) | — | a conferir |
 | [ ] | MS | Panorama Leilões (Cone Sul) | — | a conferir |
 | [ ] | MS | Reata Leilões | — | a conferir |
-| [ ] | MT | Famato + Acrimat | — | a conferir |
+| [x] | MT | Famato + Acrimat | [leiloeiros](https://sistemafamato.org.br/leiloeiros-rurais/) | **sem agenda de leilões**. A Famato publica só a lista de leiloeiros credenciados em MT (nome e telefone, útil para contato, mas são dados pessoais: não coletar) e o calendário interno de 2025. O site da Acrimat está fora do ar |
 | [ ] | MT | Estância Bahia Leilões | — | a conferir |
 | [ ] | MT | Leilão Cuiabá Premium | — | a conferir |
-| [ ] | GO | FAEG | — | a conferir |
+| [x] | GO | FAEG | [eventos](https://sistemafaeg.com.br/eventos) | **sem leilões**: só eventos institucionais (cursos, Campo Saúde, Demoday) |
 | [ ] | GO | Leiloeiras goianas (ver lista da Juceg) | [Juceg: leiloeiros](https://goias.gov.br/juceg/leiloeiros/) | a conferir |
 | [ ] | DF | Leiloeiras do DF/entorno | — | a conferir |
 
@@ -125,10 +129,10 @@ Em cada estado, confira três coisas: a **federação da agricultura** (calendá
 ### Norte
 | ✓ | UF | Fonte | Link | Situação |
 |---|---|---|---|---|
-| [ ] | PA | **Faepa: calendário de eventos agropecuários** | [notícia (102 leilões em 2023)](https://www.comprerural.com/para-deve-ter-102-leiloes-de-gado-ate-o-final-de-2023/) | a conferir. ⭐ Buscar a edição de 2026 |
+| [ ] | PA | **Faepa: calendário de eventos agropecuários** | [notícia de 2026](https://cnabrasil.org.br/noticias/liderancas-do-agronegocio-paraense-definem-calendario-de-eventos-e-confirmam-expopara-para-2026) | **não publicado online**. O calendário de 2026 foi definido em março, mas não há arquivo público, e a Faepa não tem site próprio (notícias ficam no portal da CNA). ⭐ Pedir direto à Faepa: em 2023 eram 102 leilões |
 | [ ] | PA | Leiloeiras paraenses (Redenção, Marabá, Xinguara, Paragominas) | — | a conferir |
-| [ ] | TO | FAET + leiloeiras tocantinenses (Araguaína, Gurupi) | — | a conferir |
-| [ ] | RO | FAERO + leiloeiras de Rondônia (Ji-Paraná, Cacoal, Ariquemes) | — | a conferir |
+| [ ] | TO | FAET + leiloeiras tocantinenses (Araguaína, Gurupi, Paraíso: Estrela Dalva Leilões) | — | FAET: site sem conteúdo. Leiloeiras locais sem site encontrado (divulgam por Instagram/WhatsApp) |
+| [ ] | RO | FAERO + leiloeiras de Rondônia (Ji-Paraná, Cacoal, Ariquemes) | — | FAERO: domínio não encontrado. Leiloeiras sem agenda online encontrada |
 | [ ] | AC | FAEAC | — | a conferir |
 | [ ] | AM | FAEA | — | a conferir |
 | [ ] | RR / AP | Federações locais | — | a conferir |
