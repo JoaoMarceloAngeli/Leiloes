@@ -19,6 +19,9 @@ for c in COLETORES:
     if r.returncode != 0:
         falhas.append(c.stem)
 
+# Renova a localização guardada dos recintos do Google (vale 30 dias); sem chave, não faz nada
+if subprocess.run([sys.executable, str(SCRIPTS / "places_varredura.py"), "atualizar"]).returncode:
+    falhas.append("places_varredura (atualizar)")
 subprocess.run([sys.executable, str(SCRIPTS / "gerar_dados.py")], check=True)
 if falhas:
     print("ATENÇÃO, coletores com erro:", ", ".join(falhas))

@@ -7,6 +7,12 @@ Uso:
 O link curto (maps.app.goo.gl) é aberto só para ler o endereço de destino; nenhuma página
 do Google é baixada. Do destino saem o nome e as coordenadas; a cidade é o município mais
 próximo (base IBGE em data/municipios.csv). Grava em data/recintos.csv.
+
+Com a chave GOOGLE_PLACES_CHAVE no .env, o script troca nome e coordenadas pelo place_id
+(única informação do Google que os termos deixam guardar) e o mapa busca o resto ao abrir.
+Sem chave, guarda as coordenadas provisoriamente. Para converter os que ficaram assim:
+  python scripts/adicionar_recinto.py --converter
+
 Depois rode  python scripts/gerar_dados.py  para atualizar o mapa.
 """
 import argparse
@@ -19,10 +25,13 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from google_places import buscar_texto, carregar_chave  # noqa: E402
+
 RAIZ = Path(__file__).resolve().parent.parent
 DADOS = RAIZ / "data"
 ARQUIVO = DADOS / "recintos.csv"
-CAMPOS = ["nome", "cidade", "uf", "lat", "lng", "dias", "telefone", "site", "maps", "obs", "fonte"]
+CAMPOS = ["place_id", "nome", "cidade", "uf", "lat", "lng", "dias", "telefone", "site", "maps", "obs", "fonte", "coord_data"]
 
 
 class SemRedirecionar(urllib.request.HTTPRedirectHandler):
@@ -69,8 +78,54 @@ def municipio_mais_proximo(lat: float, lng: float) -> tuple[str, str]:
     return melhor
 
 
+def achar_place_id(chave: str, nome: str, lat: float, lng: float) -> str:
+    """Busca o local pelo nome perto das coordenadas, pedindo só o id (campo mais barato)."""
+    resp = buscar_texto(chave, nome, ["places.id"], centro=(lat, lng), raio_m=500)
+    lugares = resp.get("places", [])
+    return lugares[0]["id"] if lugares else ""
+
+
+def ler_recintos() -> list[dict]:
+    if not ARQUIVO.exists():
+        return []
+    with open(ARQUIVO, encoding="utf-8-sig") as f:
+        return [{c: r.get(c, "") or "" for c in CAMPOS} for r in csv.DictReader(f)]
+
+
+def gravar(linhas: list[dict]) -> None:
+    with open(ARQUIVO, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=CAMPOS)
+        w.writeheader()
+        w.writerows(linhas)
+
+
+def para_place_id(linha: dict, chave: str) -> bool:
+    """Troca nome/coordenadas vindos do Google pelo place_id. Devolve True se converteu."""
+    pid = achar_place_id(chave, linha["nome"], float(linha["lat"]), float(linha["lng"]))
+    if not pid:
+        return False
+    linha.update(place_id=pid, nome="", lat="", lng="",
+                 maps=f"https://www.google.com/maps/place/?q=place_id:{pid}")
+    return True
+
+
+def converter() -> int:
+    chave = carregar_chave()
+    if not chave:
+        sys.exit("Falta GOOGLE_PLACES_CHAVE no arquivo .env.")
+    linhas = ler_recintos()
+    for l in linhas:
+        if l["fonte"].startswith("google_maps") and not l["place_id"]:
+            antes = l["nome"]
+            print(("Convertido: " if para_place_id(l, chave) else "Não achei no Google: ") + antes)
+    gravar(linhas)
+    return 0
+
+
 def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if sys.argv[1:] == ["--converter"]:
+        return converter()
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("link")
     p.add_argument("--nome", help="corrige o nome que vem do Google Maps")
@@ -84,22 +139,23 @@ def main() -> int:
     nome = a.nome or nome
     cidade, uf = municipio_mais_proximo(lat, lng)
 
-    linhas = []
-    if ARQUIVO.exists():
-        with open(ARQUIVO, encoding="utf-8-sig") as f:
-            linhas = list(csv.DictReader(f))
+    linhas = ler_recintos()
     if any(l["nome"].lower() == nome.lower() and l["uf"] == uf for l in linhas):
         print(f"Já cadastrado: {nome} ({cidade}/{uf})")
         return 0
-
-    linhas.append({"nome": nome, "cidade": cidade, "uf": uf, "lat": f"{lat:.6f}", "lng": f"{lng:.6f}",
-                   "dias": a.dias, "telefone": a.telefone, "site": a.site, "maps": a.link,
-                   "obs": a.obs, "fonte": "google_maps (link enviado)"})
-    with open(ARQUIVO, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=CAMPOS)
-        w.writeheader()
-        w.writerows(linhas)
-    print(f"Recinto adicionado: {nome} - {cidade}/{uf} ({lat:.5f}, {lng:.5f})")
+    nova = {"place_id": "", "nome": nome, "cidade": cidade, "uf": uf, "lat": f"{lat:.6f}", "lng": f"{lng:.6f}",
+            "dias": a.dias, "telefone": a.telefone, "site": a.site, "maps": a.link,
+            "obs": a.obs, "fonte": "google_maps (link enviado)"}
+    chave = carregar_chave()
+    if chave and para_place_id(nova, chave):
+        if any(l["place_id"] == nova["place_id"] for l in linhas):
+            print(f"Já cadastrado: {nome} ({cidade}/{uf})")
+            return 0
+        print(f"Recinto adicionado pelo place_id: {nome} - {cidade}/{uf}")
+    else:
+        print(f"Recinto adicionado (coordenadas provisórias, sem chave): {nome} - {cidade}/{uf}")
+    linhas.append(nova)
+    gravar(linhas)
     return 0
 
 

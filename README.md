@@ -13,7 +13,36 @@ tipo, modalidade e período, busca, e "leilões perto de mim".
    ```
    O script converte cada cidade em coordenadas, ignora leilões que já passaram e
    remove duplicados. Ele também avisa quais cidades não encontrou.
-3. Abra `site/index.html` no navegador.
+3. Abra o site por um servidor local (a chave do Google só funciona assim, não com duplo clique):
+   ```
+   python -m http.server 8000 -d site
+   ```
+   e acesse http://localhost:8000
+
+## Google Maps (configuração única)
+
+O mapa usa a Maps JavaScript API e os recintos usam a Places API (New). São duas chaves:
+
+| Chave | Onde fica | Restrição no Google Cloud |
+|---|---|---|
+| **do site** | `site/config.js` (copie de `config.exemplo.js`) | Sites: `http://localhost:8000/*` e o endereço público. APIs: Maps JavaScript API e Places API (New) |
+| **do servidor** | `.env` na raiz: `GOOGLE_PLACES_CHAVE=...` | APIs: só Places API (New) |
+
+`site/config.js` e `.env` ficam fora do git.
+
+**Termos do Google seguidos aqui:** dos recintos achados pelo Google, só o `place_id` é guardado de forma
+permanente; a localização fica guardada por no máximo 30 dias (renovada por `atualizar.py`);
+nome e endereço são buscados pelo site na hora do clique. Os dados do Google só aparecem sobre o mapa do Google.
+
+**Varredura de recintos de um estado:**
+```
+python scripts/places_varredura.py varrer GO --simular   # mostra quantas chamadas serão feitas
+python scripts/places_varredura.py varrer GO              # busca (limite padrão: 400 chamadas)
+# revise data/temp/candidatos_GO.csv no Excel: "s" na coluna aprovar
+python scripts/places_varredura.py importar GO
+python scripts/places_varredura.py atualizar
+python scripts/gerar_dados.py
+```
 
 ## Estrutura
 
