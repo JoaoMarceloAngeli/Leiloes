@@ -28,6 +28,9 @@
         chave: ["R", r.nome, r.cidade, r.uf].join("|") })),
   ];
   const porId = new Map(itens.map((it) => [it.id, it]));
+  // Locais que já têm leilões com data (dia fixo) não precisam do quadrado: os pinos já mostram o lugar
+  const locaisComData = new Set(itens.filter((it) => it.previsto).map((it) => [it.leiloeira, it.cidade, it.uf].join("|")));
+  const temData = (r) => locaisComData.has([r.nome, r.cidade, r.uf].join("|"));
 
   // ---------- Favoritos (guardados só neste navegador) ----------
   const CHAVE_FAV = "mapa-leiloes:favoritos";
@@ -147,7 +150,7 @@
       if (uf && it.uf !== uf) return false;
       if (termo && !semAcento([it.nome, it.cidade, it.uf, it.leiloeira, it.raca, it.local, it.obs]
         .join(" ")).includes(termo)) return false;
-      if (it.recinto) return comRecintos && !tipo && !mod;   // recinto não tem data, tipo nem modalidade
+      if (it.recinto) return comRecintos && !tipo && !mod && !temData(it);   // recinto não tem data, tipo nem modalidade
       return (!semVirtuais || !ehVirtual(it)) &&
         (!tipo || it.tipo === tipo) &&
         (!mod || it.modalidade === mod) &&
