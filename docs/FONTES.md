@@ -106,12 +106,13 @@ Em cada estado, confira três coisas: a **federação da agricultura** (calendá
 | [ ] | MS | Triângulo Leilões Rurais (Camapuã, Figueirão, Alcinópolis, Cassilândia, Campo Grande) | [Compre Rural](https://comprerural.com/triangulo-leiloes-camapua-ms/) | a conferir |
 | [ ] | MS | MS Pecuária (Campo Grande) | — | a conferir |
 | [ ] | MS | LN Leilões (Aquidauana) | — | a conferir |
-| [ ] | MS | Leilosin (Paranaíba) | — | a conferir |
-| [ ] | MS | Panorama Leilões (Cone Sul) | — | a conferir |
-| [ ] | MS | Reata Leilões | — | a conferir |
+| [x] | MS | Leilosin (Paranaíba) | [Compre Rural](https://comprerural.com/categorias/casas-de-leiloes/) | **sem site nem agenda online** (conferido em 23/11/2026). Leilões no Parque de Exposição Daniel Martins Ferreira, em Paranaíba: candidato a recinto (mandar link do Google Maps) |
+| [x] | MS | Panorama Leilões (Cone Sul) | — | **sem site com agenda** (23/11/2026). Só aparece em notícias de resultados (Portal DBO) |
+| [x] | MS | Reata Leilões | — | **nada encontrado** (23/11/2026): sem site, agenda nem notícias |
+| [x] | MS/SP? | Gramadão Leilões | [Compre Rural](https://comprerural.com/categorias/casas-de-leiloes/) | **sem site** (23/11/2026). O diretório diz "toda quarta, 20h, corte e leite", mas o telefone é DDD 17 (SP). Confirmar cidade antes de cadastrar como recinto |
 | [x] | MT | Famato + Acrimat | [leiloeiros](https://sistemafamato.org.br/leiloeiros-rurais/) | **sem agenda de leilões**. A Famato publica só a lista de leiloeiros credenciados em MT (nome e telefone, útil para contato, mas são dados pessoais: não coletar) e o calendário interno de 2025. O site da Acrimat está fora do ar |
 | [ ] | MT | Estância Bahia Leilões | — | a conferir |
-| [ ] | MT | Leilão Cuiabá Premium | — | a conferir |
+| [x] | MT | Leilão Cuiabá Premium | — | **nada encontrado** (23/11/2026). Em Cuiabá, os leilões que aparecem são da Estância Bahia e os do Centro de Eventos do Sindicato Rural |
 | [x] | GO | FAEG | [eventos](https://sistemafaeg.com.br/eventos) | **sem leilões**: só eventos institucionais (cursos, Campo Saúde, Demoday) |
 | [ ] | GO | Leiloeiras goianas (ver lista da Juceg) | [Juceg: leiloeiros](https://goias.gov.br/juceg/leiloeiros/) | **nenhum leilão de GO nos agregadores** (21/11/2026). Os leilões goianos são semanais em recintos locais, sem agenda online. Agora entram como **recintos** em `data/recintos.csv` (por link do Google Maps: Mara Rosa, além de Jandaia e Firminópolis, que vieram do OpenStreetMap). Faltam dias, horários e telefone de cada um |
 | [ ] | GO | Google Maps: recintos de leilão em todo o estado | — | coleta automática proibida pelos termos do Google. **Decisão (23/11/2026): sem API.** A Places API exige trocar o mapa para o Google e um pagamento antecipado de R$ 180. Recintos entram por links enviados um a um (`scripts/adicionar_recinto.py`) |
