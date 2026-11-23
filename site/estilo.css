@@ -1,22 +1,19 @@
+/* Tema: branco, verde claro e marrom claro (sempre claro, também em sistemas no modo escuro) */
 :root {
+  color-scheme: light;
   --fundo: #ffffff;
-  --fundo-2: #f4f5f2;
-  --texto: #1d2420;
-  --texto-2: #5b665f;
-  --borda: #dde2dc;
-  --destaque: #2f6b3a;
-  --destaque-claro: #e5f0e6;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fundo: #171b18;
-    --fundo-2: #212722;
-    --texto: #e8ece8;
-    --texto-2: #a3ada5;
-    --borda: #343c35;
-    --destaque: #7fc48a;
-    --destaque-claro: #24382a;
-  }
+  --fundo-2: #faf6ef;          /* bege bem claro: campos e hover */
+  --texto: #2e2a22;
+  --texto-2: #6e6353;          /* cinza amarronzado */
+  --borda: #e6dccb;            /* marrom claro suave */
+  --verde: #8cc584;            /* verde claro */
+  --verde-claro: #eaf5e6;
+  --verde-escuro: #3d7a37;     /* texto verde com contraste no branco */
+  --marrom: #c9a57d;           /* marrom claro */
+  --marrom-claro: #f4ebdd;
+  --marrom-escuro: #7b5a3a;
+  --destaque: var(--verde-escuro);
+  --destaque-claro: var(--verde-claro);
 }
 
 * { box-sizing: border-box; }
@@ -37,7 +34,7 @@ body {
   background: var(--fundo);
   z-index: 1000;
 }
-#painel header { padding: 16px 16px 8px; }
+#painel header { padding: 16px 16px 10px; background: var(--verde-claro); border-bottom: 3px solid var(--verde); }
 h1 { margin: 0; font-size: 20px; color: var(--destaque); }
 #resumo { margin: 4px 0 0; color: var(--texto-2); font-size: 14px; }
 
@@ -53,7 +50,9 @@ input, select, button {
   min-width: 0;
 }
 button { cursor: pointer; }
-#perto { background: var(--destaque-claro); color: var(--destaque); font-weight: 600; }
+#perto { background: var(--verde); border-color: var(--verde); color: #1f3d1c; font-weight: 600; }
+#perto:hover { filter: brightness(.96); }
+input:focus, select:focus { outline: 2px solid var(--verde); outline-offset: 0; border-color: var(--verde); }
 
 #lista { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
 #lista li {
@@ -61,25 +60,26 @@ button { cursor: pointer; }
   border-bottom: 1px solid var(--borda);
   cursor: pointer;
 }
-#lista li:hover, #lista li.ativo { background: var(--fundo-2); }
+#lista li:hover { background: var(--fundo-2); }
+#lista li.ativo { background: var(--verde-claro); box-shadow: inset 3px 0 0 var(--verde); }
 .item-data { font-size: 12px; font-weight: 700; color: var(--destaque); text-transform: uppercase; }
 .item-nome { font-weight: 600; margin: 2px 0; }
 .item-info { font-size: 13px; color: var(--texto-2); }
 .etiqueta {
   display: inline-block; font-size: 11px; padding: 1px 6px; margin: 4px 4px 0 0;
-  border-radius: 999px; background: var(--destaque-claro); color: var(--destaque);
+  border-radius: 999px; background: var(--marrom-claro); color: var(--marrom-escuro);
 }
 .vazio { padding: 24px 16px; color: var(--texto-2); text-align: center; cursor: default; }
-#rodape { padding: 8px 16px; font-size: 12px; color: var(--texto-2); border-top: 1px solid var(--borda); }
+#rodape { padding: 8px 16px; font-size: 12px; color: var(--texto-2); border-top: 1px solid var(--borda); background: var(--marrom-claro); }
 
 .opcao { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
-.opcao input { width: 16px; height: 16px; margin: 0; padding: 0; }
+.opcao input { width: 16px; height: 16px; margin: 0; padding: 0; accent-color: var(--verde-escuro); }
 .legenda { display: flex; gap: 16px; font-size: 12px; color: var(--texto-2); }
 .legenda > span { display: inline-flex; align-items: center; gap: 6px; }
 
 .pino {
   display: block; width: 22px; height: 22px;
-  background: #2f8a3e; border: 2px solid #fff;
+  background: #5fae57; border: 2px solid #fff;
   border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
   box-shadow: 0 1px 4px rgba(0,0,0,.4);
 }
@@ -89,7 +89,7 @@ button { cursor: pointer; }
 /* Recinto: local fixo de leilões frequentes (sem data específica) */
 .recinto {
   display: block; width: 16px; height: 16px;
-  background: #c26a12; border: 2px solid #fff; border-radius: 3px;
+  background: #a9784b; border: 2px solid #fff; border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0,0,0,.4);
 }
 .recinto-mini { width: 11px; height: 11px; border-width: 1.5px; box-shadow: none; }
@@ -98,7 +98,17 @@ button { cursor: pointer; }
 #mapa { flex: 1; height: 100%; }
 .popup h3 { margin: 0 0 4px; font-size: 15px; }
 .popup p { margin: 2px 0; }
-.popup a { color: #2f6b3a; font-weight: 600; }
+.popup a { color: var(--verde-escuro); font-weight: 600; }
+.popup h3 { color: var(--texto); }
+
+/* Grupos de pinos no tema */
+.marker-cluster div { color: #2e2a22; font-weight: 700; }
+.marker-cluster-small { background-color: rgba(140, 197, 132, .45); }
+.marker-cluster-small div { background-color: rgba(140, 197, 132, .9); }
+.marker-cluster-medium { background-color: rgba(201, 165, 125, .45); }
+.marker-cluster-medium div { background-color: rgba(201, 165, 125, .9); }
+.marker-cluster-large { background-color: rgba(169, 120, 75, .45); }
+.marker-cluster-large div { background-color: rgba(169, 120, 75, .9); color: #fff; }
 
 #alternar { display: none; }
 
@@ -114,7 +124,7 @@ button { cursor: pointer; }
   body.lista-aberta #painel { transform: none; }
   #alternar {
     display: block; position: absolute; right: 16px; bottom: 16px; z-index: 1001;
-    background: var(--destaque); color: #fff; border: 0; font-weight: 600;
+    background: var(--verde-escuro); color: #fff; border: 0; font-weight: 600;
     box-shadow: 0 2px 8px rgba(0,0,0,.25);
   }
   body.lista-aberta #alternar { bottom: calc(55% + 12px); }
