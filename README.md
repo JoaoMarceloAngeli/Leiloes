@@ -26,7 +26,17 @@ tipo, modalidade e período, busca, e "leilões perto de mim".
 | `scripts/coletores/modelo_coletor.py` | Modelo para criar um coletor por fonte |
 | `site/` | O mapa (Leaflet + OpenStreetMap, gratuito) |
 
-## Recintos de leilão (quadrados laranja)
+## Publicação e atualização automática
+
+O GitHub Actions ([.github/workflows/atualizar.yml](.github/workflows/atualizar.yml)) roda todos os coletores
+**todo dia às 6h (Brasília)**, grava os dados novos no repositório e publica o site no **GitHub Pages**:
+https://joaomarceloangeli.github.io/Leiloes/
+
+- Para atualizar na hora: aba **Actions** > "Atualizar e publicar o mapa" > **Run workflow**.
+- Mudanças em `site/`, `data/` ou `scripts/` enviadas com `git push` republicam o site sem coletar.
+- Antes de editar no computador, rode `git pull` para trazer os dados que o robô gravou.
+
+## Recintos de leilão (quadrados marrons)
 
 Muitos leilões presenciais do interior, como os semanais em Goiás, acontecem sempre no mesmo recinto
 e não aparecem em nenhum site. Esses locais ficam no mapa como **recintos**, sem data:
