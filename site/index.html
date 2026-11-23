@@ -17,7 +17,7 @@
     </header>
 
     <div class="filtros">
-      <input id="busca" type="search" placeholder="Buscar nome, cidade, leiloeira, raça…">
+      <input id="busca" type="search" placeholder="Buscar leilão, recinto, cidade, leiloeira, raça…" autocomplete="off">
       <div class="linha">
         <select id="f-uf"><option value="">Todos os estados</option></select>
         <select id="f-tipo"><option value="">Todos os tipos</option></select>
@@ -32,8 +32,9 @@
         </select>
       </div>
       <button id="perto" type="button">📍 Leilões perto de mim</button>
-      <label class="opcao"><input id="sem-virtuais" type="checkbox"> Esconder leilões virtuais</label>
-      <label class="opcao"><input id="com-recintos" type="checkbox" checked> Mostrar recintos de leilão</label>
+      <label class="opcao"><input id="sem-virtuais" type="checkbox" autocomplete="off"> Esconder leilões virtuais</label>
+      <label class="opcao"><input id="com-recintos" type="checkbox" checked autocomplete="off"> Mostrar recintos de leilão</label>
+      <label class="opcao"><input id="so-favoritos" type="checkbox" autocomplete="off"> <span class="estrela">★</span> Só favoritos</label>
       <div class="legenda">
         <span><span class="pino pino-mini"></span> Local físico</span>
         <span><span class="pino pino-mini pino-virtual"></span> Virtual (estúdio)</span>
