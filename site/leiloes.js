@@ -146,6 +146,22 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão Virtual Elite Nelore Amor",
+  "data": "2026-11-24",
+  "hora": "19:00",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "Estúdio de transmissão (local da fazenda não informado)",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Elite",
+  "modalidade": "Virtual",
+  "raca": "Nelore PO",
+  "link": "https://programaleiloes.com/agenda/leilao/91634-leilao-virtual-elite-nelore-amor",
+  "fonte": "programa_leiloes, canal_do_criador",
+  "lat": -23.304,
+  "lng": -51.1691
+ },
+ {
   "nome": "Leilão Virtual Genética Varrela - Reprodutores e Matrizes",
   "data": "2026-11-24",
   "hora": "19:00",
@@ -160,22 +176,6 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -9.66599,
   "lng": -35.735
- },
- {
-  "nome": "Leilão Virtual Nelore Elite Amor",
-  "data": "2026-11-24",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91634-leilao-virtual-nelore-elite-amor",
-  "fonte": "programa_leiloes, canal_do_criador",
-  "lat": -23.304,
-  "lng": -51.1691
  },
  {
   "nome": "2º Etapa Leilão Virtual Qualidade Corona",
@@ -242,7 +242,7 @@ window.LEILOES = [
   "lng": -50.4401
  },
  {
-  "nome": "4° Grupo Suprema - 1ª Etapa",
+  "nome": "4° Grupo Suprema - Live",
   "data": "2026-11-25",
   "hora": "19:30",
   "cidade": "Londrina",
@@ -252,13 +252,13 @@ window.LEILOES = [
   "tipo": "Geral",
   "modalidade": "Virtual",
   "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91798-4-grupo-suprema-1-etapa",
+  "link": "https://programaleiloes.com/agenda/leilao/91798-4-grupo-suprema-live",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
  },
  {
-  "nome": "Leilão Chave de Ouro Eao",
+  "nome": "Leilão Chave de Ouro - 1ª Etapa",
   "data": "2026-11-25",
   "hora": "20:00",
   "cidade": "Salvador",
@@ -268,7 +268,7 @@ window.LEILOES = [
   "tipo": "Matrizes",
   "modalidade": "Presencial + TV",
   "raca": "Nelore",
-  "link": "https://www.centralleiloes.com.br/leilao-2604-leilao-chave-de-ouro-eao",
+  "link": "https://www.centralleiloes.com.br/leilao-2604-leilao-chave-de-ouro--1aa-etapa",
   "fonte": "central_leiloes, acnb_nelore, programa_leiloes, canal_do_criador",
   "lat": -12.9718,
   "lng": -38.5011
@@ -322,7 +322,7 @@ window.LEILOES = [
   "lng": -51.2065
  },
  {
-  "nome": "4° Grupo Suprema - 2ª Etapa",
+  "nome": "4° Grupo Suprema - 1ª Etapa",
   "data": "2026-11-26",
   "hora": "19:30",
   "cidade": "Londrina",
@@ -332,13 +332,13 @@ window.LEILOES = [
   "tipo": "Geral",
   "modalidade": "Virtual",
   "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91790-4-grupo-suprema-2-etapa",
+  "link": "https://programaleiloes.com/agenda/leilao/91790-4-grupo-suprema-1-etapa",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
  },
  {
-  "nome": "Leilão Chave de Ouro Eao",
+  "nome": "Leilão Chave de Ouro - 2ª Etapa",
   "data": "2026-11-26",
   "hora": "20:00",
   "cidade": "Salvador",
@@ -348,7 +348,7 @@ window.LEILOES = [
   "tipo": "Matrizes",
   "modalidade": "Presencial + TV",
   "raca": "Nelore",
-  "link": "https://www.centralleiloes.com.br/leilao-2606-leilao-chave-de-ouro-eao",
+  "link": "https://www.centralleiloes.com.br/leilao-2606-leilao-chave-de-ouro--2aa-etapa",
   "fonte": "central_leiloes, acnb_nelore, programa_leiloes, canal_do_criador",
   "lat": -12.9718,
   "lng": -38.5011
@@ -402,7 +402,7 @@ window.LEILOES = [
   "lng": -40.6594
  },
  {
-  "nome": "4° Grupo Suprema - 3ª Etapa",
+  "nome": "4° Grupo Suprema - 2ª Etapa",
   "data": "2026-11-27",
   "hora": "19:30",
   "cidade": "Londrina",
@@ -412,7 +412,7 @@ window.LEILOES = [
   "tipo": "Geral",
   "modalidade": "Virtual",
   "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91794-4-grupo-suprema-3-etapa",
+  "link": "https://programaleiloes.com/agenda/leilao/91794-4-grupo-suprema-2-etapa",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
@@ -434,7 +434,7 @@ window.LEILOES = [
   "lng": -47.9381
  },
  {
-  "nome": "4° Grupo Suprema - 4ª Etapa",
+  "nome": "4° Grupo Suprema - 3ª Etapa",
   "data": "2026-11-28",
   "hora": "09:00",
   "cidade": "Londrina",
@@ -444,7 +444,7 @@ window.LEILOES = [
   "tipo": "Geral",
   "modalidade": "Virtual",
   "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91787-4-grupo-suprema-4-etapa",
+  "link": "https://programaleiloes.com/agenda/leilao/91787-4-grupo-suprema-3-etapa",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
@@ -594,7 +594,7 @@ window.LEILOES = [
   "lng": -47.3465
  },
  {
-  "nome": "4° Grupo Suprema - 5ª Etapa",
+  "nome": "4° Grupo Suprema - 4ª Etapa",
   "data": "2026-11-29",
   "hora": "09:00",
   "cidade": "Londrina",
@@ -604,7 +604,7 @@ window.LEILOES = [
   "tipo": "Geral",
   "modalidade": "Virtual",
   "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91796-4-grupo-suprema-5-etapa",
+  "link": "https://programaleiloes.com/agenda/leilao/91796-4-grupo-suprema-4-etapa",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
@@ -834,22 +834,6 @@ window.LEILOES = [
   "lng": -46.9532
  },
  {
-  "nome": "Leilão Seleção Especial do Chicão",
-  "data": "2026-11-30",
-  "hora": "20:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91877-leilao-selecao-especial-do-chicao",
-  "fonte": "programa_leiloes, canal_do_criador",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
   "nome": "Leilão Virtual Fazenda API - Etapa Matrizes",
   "data": "2026-11-30",
   "hora": "20:00",
@@ -864,6 +848,22 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -12.3513,
   "lng": -38.3791
+ },
+ {
+  "nome": "Leilão Seleção Especial Do Chicão – Grupo SP",
+  "data": "2026-11-30",
+  "hora": "20:00",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "Estúdio de transmissão (local da fazenda não informado)",
+  "leiloeira": "",
+  "tipo": "Elite",
+  "modalidade": "Virtual",
+  "raca": "Nelore",
+  "link": "https://canaldocriador.com.br/leilao/leilao-selecao-especial-do-chicao-grupo-sp/",
+  "fonte": "canal_do_criador",
+  "lat": -23.304,
+  "lng": -51.1691
  },
  {
   "nome": "Leilão Nelore Paranã - Especial Final de Ano.",
@@ -1010,6 +1010,22 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão Seleção Especial do Chicão",
+  "data": "2026-12-03",
+  "hora": "19:00",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "Estúdio de transmissão (local da fazenda não informado)",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Elite",
+  "modalidade": "Virtual",
+  "raca": "Nelore PO",
+  "link": "https://programaleiloes.com/agenda/leilao/91877-leilao-selecao-especial-do-chicao",
+  "fonte": "programa_leiloes",
+  "lat": -23.304,
+  "lng": -51.1691
+ },
+ {
   "nome": "62° Leilão Baby Gir Calciolandia",
   "data": "2026-12-03",
   "hora": "20:00",
@@ -1106,7 +1122,23 @@ window.LEILOES = [
   "lng": -46.6395
  },
  {
-  "nome": "Garrotes ABS Brasil",
+  "nome": "6º Leilão Nelore Arar e Convidados",
+  "data": "2026-12-05",
+  "hora": "13:00",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "",
+  "leiloeira": "Nelore Arar",
+  "tipo": "Geral",
+  "modalidade": "Virtual",
+  "raca": "Nelore",
+  "link": "https://www.nelore.org.br/agenda-de-leiloes/",
+  "fonte": "acnb_nelore",
+  "lat": -23.304,
+  "lng": -51.1691
+ },
+ {
+  "nome": "1º Leilão Virtual ABS Z",
   "data": "2026-12-05",
   "hora": "13:00",
   "cidade": "Londrina",
@@ -1116,7 +1148,7 @@ window.LEILOES = [
   "tipo": "Elite",
   "modalidade": "Virtual",
   "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91849-garrotes-abs-brasil",
+  "link": "https://programaleiloes.com/agenda/leilao/91849-1-leilao-virtual-abs-z",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
@@ -1810,7 +1842,7 @@ window.LEILOES = [
   "lng": -56.0974
  },
  {
-  "nome": "Leilão Encerramento de Temporada 2026",
+  "nome": "Programa de Domingo - Leilão Encerramento de Temporada 2026",
   "data": "2026-12-20",
   "hora": "14:00",
   "cidade": "Cuiabá",
@@ -1820,7 +1852,7 @@ window.LEILOES = [
   "tipo": "Corte",
   "modalidade": "Transmitido na TV",
   "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91883-leilao-encerramento-de-temporada-2026",
+  "link": "https://programaleiloes.com/agenda/leilao/91883-programa-de-domingo-leilao-encerramento-de-temporada-2026",
   "fonte": "programa_leiloes",
   "lat": -15.601,
   "lng": -56.0974
