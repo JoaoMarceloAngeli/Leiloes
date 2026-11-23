@@ -88,7 +88,7 @@ def main() -> int:
     if ARQUIVO.exists():
         with open(ARQUIVO, encoding="utf-8-sig") as f:
             linhas = list(csv.DictReader(f))
-    if any(l["nome"].lower() == nome.lower() and l["uf"] == uf for l in linhas):
+    if any(l["nome"].lower() == nome.lower() and l["cidade"] == cidade and l["uf"] == uf for l in linhas):
         print(f"Já cadastrado: {nome} ({cidade}/{uf})")
         return 0
 
