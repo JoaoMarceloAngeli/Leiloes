@@ -1,5 +1,11 @@
 # Pedido de acesso à informação: Agrodefesa (GO)
 
+> **Enviado em 23/11/2026, protocolo 2026.1123.133352-18**, pelo portal Expresso (Controladoria-Geral do Estado >
+> Registrar Manifestação ou Pedido de Acesso à Informação > Pedido de informação Pública). Consulta pelo card
+> "Consultar manifestações". Na versão enviada, o texto começou com "À Agência Goiana de Defesa Agropecuária
+> (Agrodefesa)." e incluiu a frase citando os serviços "Credenciar Eventos Pecuários", "Realizar licenciamento
+> Anual de Eventos Pecuários" e "Abrir Ciclos de Eventos Pecuários" do portal Expresso.
+
 **Onde enviar:** canal de pedidos de acesso à informação (Lei 12.527/2011) do Governo de Goiás,
 pela Ouvidoria-Geral do Estado, com destino à Agência Goiana de Defesa Agropecuária (Agrodefesa).
 Prazo legal de resposta: 20 dias, prorrogáveis por mais 10.
