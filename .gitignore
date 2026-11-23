@@ -3,4 +3,3 @@ __pycache__/
 .venv/
 .env
 site/config.js
-data/temp/

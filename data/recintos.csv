@@ -1,4 +1,4 @@
-place_id,nome,cidade,uf,lat,lng,dias,telefone,site,maps,obs,fonte,coord_data
-,Mara Rosa Leilões,Mara Rosa,GO,-14.014690,-49.086151,,,,https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6,,google_maps (link enviado),
-,Leilão de Gado Jandaia,Jandaia,GO,-17.034200,-50.123400,,,,"https://www.google.com/maps/search/?api=1&query=-17.034200,-50.123400",,openstreetmap,
-,Firminópolis Leilões,Firminópolis,GO,-16.592600,-50.253500,,,,"https://www.google.com/maps/search/?api=1&query=-16.592600,-50.253500",,openstreetmap,
+nome,cidade,uf,lat,lng,dias,telefone,site,maps,obs,fonte
+Mara Rosa Leilões,Mara Rosa,GO,-14.014690,-49.086151,,,,https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6,,google_maps (link enviado)
+Leilão de Gado Jandaia,Jandaia,GO,-17.034200,-50.123400,,,,"https://www.google.com/maps/search/?api=1&query=-17.034200,-50.123400",,openstreetmap
+Firminópolis Leilões,Firminópolis,GO,-16.592600,-50.253500,,,,"https://www.google.com/maps/search/?api=1&query=-16.592600,-50.253500",,openstreetmap

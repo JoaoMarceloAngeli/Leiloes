@@ -114,7 +114,8 @@ Em cada estado, confira três coisas: a **federação da agricultura** (calendá
 | [ ] | MT | Leilão Cuiabá Premium | — | a conferir |
 | [x] | GO | FAEG | [eventos](https://sistemafaeg.com.br/eventos) | **sem leilões**: só eventos institucionais (cursos, Campo Saúde, Demoday) |
 | [ ] | GO | Leiloeiras goianas (ver lista da Juceg) | [Juceg: leiloeiros](https://goias.gov.br/juceg/leiloeiros/) | **nenhum leilão de GO nos agregadores** (21/11/2026). Os leilões goianos são semanais em recintos locais, sem agenda online. Agora entram como **recintos** em `data/recintos.csv` (por link do Google Maps: Mara Rosa, além de Jandaia e Firminópolis, que vieram do OpenStreetMap). Faltam dias, horários e telefone de cada um |
-| [ ] | GO | Google Maps: recintos de leilão em todo o estado | — | coleta automática proibida pelos termos do Google. Caminhos: (1) links enviados um a um; (2) API oficial Google Places com chave própria. O OpenStreetMap tem só 3 recintos em GO |
+| [ ] | GO | Google Maps: recintos de leilão em todo o estado | — | coleta automática proibida pelos termos do Google. **Decisão (23/11/2026): sem API.** A Places API exige trocar o mapa para o Google e um pagamento antecipado de R$ 180. Recintos entram por links enviados um a um (`scripts/adicionar_recinto.py`) |
+| [ ] | GO | **Agrodefesa: leilões autorizados + recintos cadastrados** | [texto do pedido](pedidos/agrodefesa_lai.md) | todo leilão em GO é comunicado à Agrodefesa 5 dias antes. Pedido pela Lei de Acesso à Informação **a enviar** |
 | [ ] | DF | Leiloeiras do DF/entorno | — | a conferir |
 
 ### Sudeste

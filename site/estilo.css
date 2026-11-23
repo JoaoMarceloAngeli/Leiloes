@@ -119,11 +119,3 @@ button { cursor: pointer; }
   }
   body.lista-aberta #alternar { bottom: calc(55% + 12px); }
 }
-
-/* Google Maps */
-.voce { display: block; width: 16px; height: 16px; border-radius: 50%;
-  background: #1f6feb; border: 3px solid #fff; box-shadow: 0 0 0 2px rgba(31,111,235,.35); }
-.aviso-mapa { max-width: 460px; margin: 15vh auto; padding: 24px; line-height: 1.5;
-  background: var(--fundo-2, #f4f4f4); color: var(--texto, #222); border-radius: 12px; }
-.aviso-mapa h2 { margin: 0 0 8px; font-size: 18px; }
-.popup { color: #222; }

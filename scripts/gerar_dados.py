@@ -119,17 +119,11 @@ def ler_recintos() -> list:
     with open(arq, encoding="utf-8-sig") as f:
         recintos = []
         for r in csv.DictReader(f):
-            r = {k: (v or "").strip() for k, v in r.items()}
-            # Coordenada vinda do Google só vale 30 dias (termos do Google Maps Platform)
-            if r.get("place_id") and r.get("coord_data") and                     (date.today() - date.fromisoformat(r["coord_data"])).days > 30:
-                r["lat"] = r["lng"] = ""
-            try:   # coordenadas próprias (OpenStreetMap, à mão)...
+            try:
                 r["lat"], r["lng"] = float(r["lat"]), float(r["lng"])
             except (TypeError, ValueError):
-                r["lat"] = r["lng"] = None
-                if not r.get("place_id"):   # ...ou place_id do Google (o site busca a localização)
-                    continue
-            recintos.append(r)
+                continue
+            recintos.append({k: v.strip() if isinstance(v, str) else v for k, v in r.items()})
     return sorted(recintos, key=lambda r: (r["uf"], r["cidade"], r["nome"]))
 
 

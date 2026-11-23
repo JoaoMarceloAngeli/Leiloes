@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mapa de Leilões</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -45,9 +48,8 @@
   <main id="mapa"></main>
   <button id="alternar" type="button" aria-label="Mostrar lista">☰ Lista</button>
 
-  <script src="https://unpkg.com/@googlemaps/markerclusterer@2.5.3/dist/index.min.js"></script>
-  <!-- Chave do Google Maps: copie config.exemplo.js para config.js e preencha (config.js fica fora do git) -->
-  <script src="config.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script src="leiloes.js" charset="utf-8"></script>
   <script src="app.js"></script>
 </body>
