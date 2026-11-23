@@ -103,7 +103,18 @@
       icon: it.recinto ? ICONES.recinto : ehVirtual(it) ? ICONES.virtual : ICONES.fisico,
       zIndexOffset: it.recinto ? -100 : 0,
     }).bindPopup(() => it.recinto ? popupRecinto(it) : popupLeilao(it), opcoesBalao());   // gerado ao abrir: estrela sempre atual
-    m.on("click", () => destacar(it.id, false));
+    m.on("click", () => {
+      if (celular.matches) {
+        // Celular: tocar no pino só mostra o card; a lista não abre nem rola
+        if (document.body.classList.contains("lista-aberta")) {
+          document.body.classList.remove("lista-aberta");
+          $("alternar").textContent = "☰ Lista";
+        }
+        marcarNaLista(it.id);
+      } else {
+        destacar(it.id, false);
+      }
+    });
     marcadores.set(it.id, m);
   });
 
@@ -215,10 +226,17 @@
     }
   }
 
-  function destacar(id, voar) {
+  // Marca o item na lista sem rolar nada
+  function marcarNaLista(id) {
     document.querySelectorAll("#lista li.ativo").forEach((el) => el.classList.remove("ativo"));
     const li = document.querySelector(`#lista li[data-id="${id}"]`);
-    if (li) { li.classList.add("ativo"); if (!voar) rolarAte(li); }
+    if (li) li.classList.add("ativo");
+    return li;
+  }
+
+  function destacar(id, voar) {
+    const li = marcarNaLista(id);
+    if (li && !voar) rolarAte(li);
     if (!voar) return;
     if (celular.matches && document.body.classList.contains("lista-aberta")) {
       // No celular: fecha a gaveta primeiro e só depois leva o mapa ao leilão
@@ -278,8 +296,6 @@
     mapa.closePopup();
     document.body.classList.toggle("lista-aberta");
     $("alternar").textContent = document.body.classList.contains("lista-aberta") ? "🗺 Mapa" : "☰ Lista";
-    const ativo = document.querySelector("#lista li.ativo");
-    if (ativo) setTimeout(() => rolarAte(ativo), 280);
   });
 
   $("rodape").textContent = window.LEILOES_ATUALIZADO
