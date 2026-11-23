@@ -17,7 +17,9 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; }
+html, body { margin: 0; height: 100%; overflow: hidden; }
+/* A página nunca rola: só a lista rola por dentro (evita o mapa "pular" no celular) */
+body { position: fixed; inset: 0; height: 100dvh; overscroll-behavior: none; }
 body {
   display: flex;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -113,21 +115,37 @@ input:focus, select:focus { outline: 2px solid var(--verde); outline-offset: 0; 
 #alternar { display: none; }
 
 @media (max-width: 760px) {
+  #mapa { height: 100dvh; }
   #painel {
     position: absolute; inset: auto 0 0 0;
-    width: 100%; height: 55%;
+    width: 100%; height: 72dvh;
     border-right: 0; border-top: 1px solid var(--borda);
     border-radius: 14px 14px 0 0;
-    transform: translateY(calc(100% - 0px));
-    transition: transform .25s;
+    box-shadow: 0 -4px 16px rgba(0,0,0,.18);
+    transform: translateY(100%);
+    visibility: hidden;                 /* fechada: fora do alcance do toque e da rolagem */
+    transition: transform .25s, visibility 0s .25s;
+    overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
   }
-  body.lista-aberta #painel { transform: none; }
+  body.lista-aberta #painel { transform: none; visibility: visible; transition: transform .25s; }
+  #painel header { position: sticky; top: 0; z-index: 2; border-radius: 14px 14px 0 0; }
+  #painel header::before {              /* "alça" da gaveta */
+    content: ""; display: block; width: 40px; height: 4px; margin: -6px auto 8px;
+    border-radius: 2px; background: var(--marrom);
+  }
+  #lista { overflow: visible; flex: none; }
+  #lista li { padding-top: 14px; padding-bottom: 14px; }
+  input, select, button { font-size: 16px; }   /* evita o zoom automático do iPhone ao tocar nos campos */
+  .fav { font-size: 24px; padding: 6px 8px; }
+  #lista li > .fav { top: 6px; right: 4px; }
   #alternar {
-    display: block; position: absolute; right: 16px; bottom: 16px; z-index: 1001;
-    background: var(--verde-escuro); color: #fff; border: 0; font-weight: 600;
+    display: block; position: absolute; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 1001;
+    background: var(--verde-escuro); color: #fff; border: 0; font-weight: 600; font-size: 16px;
+    padding: 10px 16px; border-radius: 999px;
     box-shadow: 0 2px 8px rgba(0,0,0,.25);
   }
-  body.lista-aberta #alternar { bottom: calc(55% + 12px); }
+  body.lista-aberta #alternar { bottom: calc(72dvh + 12px); }
+  .leaflet-popup-content { margin: 12px 14px; }
 }
 
 /* Favoritos */

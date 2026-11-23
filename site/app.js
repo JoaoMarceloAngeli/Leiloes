@@ -53,6 +53,14 @@
   mapa.addLayer(camadaRecintos);
   const marcadores = new Map();
   let minhaPosicao = null;
+  const celular = window.matchMedia("(max-width: 760px)");
+  const listaVisivel = () => !celular.matches || document.body.classList.contains("lista-aberta");
+  // Balão sempre inteiro na tela (no celular, deixa espaço para o botão "Lista")
+  const opcoesBalao = () => ({
+    maxWidth: celular.matches ? 260 : 320,
+    autoPanPaddingTopLeft: [16, 16],
+    autoPanPaddingBottomRight: [16, celular.matches ? 80 : 16],
+  });
 
   function popupLeilao(l) {
     const link = linkSeguro(l.link);
@@ -94,7 +102,7 @@
       title: it.nome,
       icon: it.recinto ? ICONES.recinto : ehVirtual(it) ? ICONES.virtual : ICONES.fisico,
       zIndexOffset: it.recinto ? -100 : 0,
-    }).bindPopup(() => it.recinto ? popupRecinto(it) : popupLeilao(it));   // gerado ao abrir: estrela sempre atual
+    }).bindPopup(() => it.recinto ? popupRecinto(it) : popupLeilao(it), opcoesBalao());   // gerado ao abrir: estrela sempre atual
     m.on("click", () => destacar(it.id, false));
     marcadores.set(it.id, m);
   });
@@ -186,19 +194,39 @@
     }
   }
 
+  // Rola só a lista (nunca a página), e só se ela estiver visível
+  function rolarAte(li) {
+    if (!listaVisivel()) return;
+    const caixa = celular.matches ? $("painel") : $("lista");
+    const c = caixa.getBoundingClientRect(), r = li.getBoundingClientRect();
+    const topo = celular.matches ? $("painel").querySelector("header").offsetHeight : 0;
+    if (r.top < c.top + topo) caixa.scrollTop -= c.top + topo - r.top + 8;
+    else if (r.bottom > c.bottom) caixa.scrollTop += r.bottom - c.bottom + 8;
+  }
+
+  function irPara(id) {
+    const m = marcadores.get(id);
+    mapa.closePopup();
+    if (porId.get(id).recinto) {
+      mapa.setView(m.getLatLng(), Math.max(mapa.getZoom(), 12), { animate: false });
+      m.openPopup();
+    } else {
+      grupo.zoomToShowLayer(m, () => m.openPopup());
+    }
+  }
+
   function destacar(id, voar) {
     document.querySelectorAll("#lista li.ativo").forEach((el) => el.classList.remove("ativo"));
     const li = document.querySelector(`#lista li[data-id="${id}"]`);
-    if (li) { li.classList.add("ativo"); if (!voar) li.scrollIntoView({ block: "nearest" }); }
-    if (voar) {
-      const m = marcadores.get(id);
-      if (porId.get(id).recinto) {
-        mapa.setView(m.getLatLng(), Math.max(mapa.getZoom(), 12));
-        m.openPopup();
-      } else {
-        grupo.zoomToShowLayer(m, () => m.openPopup());
-      }
+    if (li) { li.classList.add("ativo"); if (!voar) rolarAte(li); }
+    if (!voar) return;
+    if (celular.matches && document.body.classList.contains("lista-aberta")) {
+      // No celular: fecha a gaveta primeiro e só depois leva o mapa ao leilão
       document.body.classList.remove("lista-aberta");
+      $("alternar").textContent = "☰ Lista";
+      setTimeout(() => { mapa.invalidateSize(); irPara(id); }, 280);
+    } else {
+      irPara(id);
     }
   }
 
@@ -246,7 +274,13 @@
     });
   });
 
-  $("alternar").addEventListener("click", () => document.body.classList.toggle("lista-aberta"));
+  $("alternar").addEventListener("click", () => {
+    mapa.closePopup();
+    document.body.classList.toggle("lista-aberta");
+    $("alternar").textContent = document.body.classList.contains("lista-aberta") ? "🗺 Mapa" : "☰ Lista";
+    const ativo = document.querySelector("#lista li.ativo");
+    if (ativo) setTimeout(() => rolarAte(ativo), 280);
+  });
 
   $("rodape").textContent = window.LEILOES_ATUALIZADO
     ? `Dados atualizados em ${paraData(window.LEILOES_ATUALIZADO).toLocaleDateString("pt-BR")}`
