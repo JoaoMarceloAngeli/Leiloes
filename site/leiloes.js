@@ -1990,6 +1990,19 @@ window.RECINTOS = [
   "fonte": "google_maps (link enviado)"
  },
  {
+  "nome": "Sindicato Rural de Porangatu",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "lat": -13.443501,
+  "lng": -49.140695,
+  "dias": "Toda quarta-feira",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/WwFzUXauDNWgKEea8",
+  "obs": "Parque de Exposições Agropecuárias Hilton Monteiro da Rocha",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
   "nome": "Brasil Leilões",
   "cidade": "São Luís de Montes Belos",
   "uf": "GO",
