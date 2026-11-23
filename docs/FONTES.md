@@ -123,9 +123,9 @@ Em cada estado, confira três coisas: a **federação da agricultura** (calendá
 | ✓ | UF | Fonte | Link | Situação |
 |---|---|---|---|---|
 | [ ] | MG | FAEMG | — | a conferir |
-| [ ] | MG | Uberaba: ExpoZebu e leilões no Parque Fernando Costa | — | a conferir |
+| [x] | MG | Uberaba: ExpoZebu e leilões no Parque Fernando Costa | [ExpoZebu 2026](https://www.canalrural.com.br/pecuaria/91a-expozebu-e-aberta-em-uberaba-com-expectativa-de-r-200-milhoes-em-negocios/) | as agendas (ExpoZebu: 40 leilões; ExpoGenética: 32) são publicadas pela **ABCZ, que bloqueia robôs**. Os leilões que passam na TV já entram pelo Canal do Boi/Programa Leilões. **Império Leilões** (Uberaba, recinto para 7 mil animais, [nota](https://diariodocomercio.com.br/agronegocio/curtas-agronegocio-15-12-2/)): sem site encontrado, candidato a recinto (23/11/2026) |
 | [ ] | MG | Leiloeiras mineiras (ver lista da Jucemg) | [Jucemg: leiloeiros](https://jucemg.mg.gov.br/pagina/140/leiloeiros-ordem-alfabetica) | a conferir |
-| [ ] | SP | FAESP + leiloeiras paulistas (Barretos, Araçatuba, Presidente Prudente) | — | a conferir |
+| [x] | SP | FAESP + leiloeiras paulistas (Barretos, Araçatuba, Presidente Prudente) | — | Araçatuba: a principal é a **Central Leilões, já coletada**. Barretos e Presidente Prudente: nenhuma leiloeira com agenda online encontrada (23/11/2026) |
 | [ ] | RJ | FAERJ | — | a conferir |
 | [ ] | ES | FAES | — | a conferir |
 
