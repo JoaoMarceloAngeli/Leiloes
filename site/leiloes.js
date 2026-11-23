@@ -1860,6 +1860,45 @@ window.LEILOES = [
 ];
 window.RECINTOS = [
  {
+  "nome": "Bambu Leilões",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "lat": -14.29474,
+  "lng": -49.150588,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/XLkT73SYQnRxAddk7",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
+  "nome": "Casa Branca Leilões",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "lat": -14.26955,
+  "lng": -49.142464,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/vBoVboUADiNmNEFH7",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
+  "nome": "Leilão Walker",
+  "cidade": "Crixás",
+  "uf": "GO",
+  "lat": -14.530235,
+  "lng": -49.948857,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/zdu4UZVt6sWET3e18",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
   "nome": "Firminópolis Leilões",
   "cidade": "Firminópolis",
   "uf": "GO",
@@ -1871,6 +1910,19 @@ window.RECINTOS = [
   "maps": "https://www.google.com/maps/search/?api=1&query=-16.592600,-50.253500",
   "obs": "",
   "fonte": "openstreetmap"
+ },
+ {
+  "nome": "Formoso Leilões",
+  "cidade": "Formoso",
+  "uf": "GO",
+  "lat": -13.653724,
+  "lng": -48.867818,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/ikFzhwVuH7UWjipN6",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
  },
  {
   "nome": "Leilão de Gado Jandaia",
@@ -1895,6 +1947,58 @@ window.RECINTOS = [
   "telefone": "",
   "site": "",
   "maps": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
+  "nome": "Mundo Novo Leilões",
+  "cidade": "Mundo Novo",
+  "uf": "GO",
+  "lat": -13.772548,
+  "lng": -50.289013,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/vZ8FuC969Ljj6dsq7",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
+  "nome": "Araguaia Leilões",
+  "cidade": "Nova Crixás",
+  "uf": "GO",
+  "lat": -14.115628,
+  "lng": -50.343939,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/6jpDhv8gS2nANVB9A",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
+  "nome": "Boi Forte Leilões",
+  "cidade": "Uirapuru",
+  "uf": "GO",
+  "lat": -14.295996,
+  "lng": -49.922072,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/xi5qnosfu7pAiVKg8",
+  "obs": "",
+  "fonte": "google_maps (link enviado)"
+ },
+ {
+  "nome": "Leilogado Uruaçu",
+  "cidade": "Uruaçu",
+  "uf": "GO",
+  "lat": -14.533308,
+  "lng": -49.144712,
+  "dias": "",
+  "telefone": "",
+  "site": "",
+  "maps": "https://maps.app.goo.gl/7Sfp3r622deE1sB27",
   "obs": "",
   "fonte": "google_maps (link enviado)"
  }
