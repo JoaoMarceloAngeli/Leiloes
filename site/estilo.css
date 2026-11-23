@@ -162,3 +162,5 @@ input:focus, select:focus { outline: 2px solid var(--verde); outline-offset: 0; 
 .estrela { color: #c98a1e; }
 .item-recinto .item-data { color: var(--marrom-escuro); }
 .etiqueta-recinto { background: var(--marrom-claro); color: var(--marrom-escuro); }
+
+.aviso-previsto { font-size: 12px; color: var(--marrom-escuro); background: var(--marrom-claro); padding: 4px 6px; border-radius: 6px; margin: 4px 0 !important; }

@@ -8,7 +8,7 @@ import json
 import re
 import sys
 import unicodedata
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -127,12 +127,39 @@ def ler_recintos() -> list:
     return sorted(recintos, key=lambda r: (r["uf"], r["cidade"], r["nome"]))
 
 
+DIAS_SEMANA = {"segunda": 0, "terca": 1, "quarta": 2, "quinta": 3, "sexta": 4, "sabado": 5, "domingo": 6}
+SEMANAS_PREVISTAS = 4
+
+
+def leiloes_semanais(recintos: list) -> list:
+    """Recintos com dia fixo ("Toda quinta-feira") viram leilões com data prevista nas próximas semanas."""
+    hoje = date.today()
+    saida = []
+    for r in recintos:
+        dias = {n for nome, n in DIAS_SEMANA.items() if nome in normalizar(r.get("dias", ""))}
+        hora = re.search(r"(\d{1,2})\s*[h:]\s*(\d{2})?", r.get("dias", ""))
+        for d in range(SEMANAS_PREVISTAS * 7):
+            dia = hoje + timedelta(days=d)
+            if dia.weekday() not in dias:
+                continue
+            saida.append({
+                "nome": f"Leilão semanal - {r['nome']}", "data": dia.isoformat(),
+                "hora": f"{int(hora.group(1)):02d}:{hora.group(2) or '00'}" if hora else "",
+                "cidade": r["cidade"], "uf": r["uf"], "local": r.get("obs") or r["nome"],
+                "leiloeira": r["nome"], "tipo": "", "modalidade": "Presencial", "raca": "",
+                "link": r.get("maps", ""), "fonte": "recinto (dia fixo)", "previsto": True,
+                "lat": r["lat"], "lng": r["lng"],   # no ponto exato do recinto
+            })
+    return saida
+
+
 def main() -> int:
     municipios = carregar_municipios()
     hoje = date.today().isoformat()
     saida, sem_local, duplicados = [], [], 0
 
-    for l in ler_leiloes():
+    recintos = ler_recintos()
+    for l in ler_leiloes() + leiloes_semanais(recintos):
         if not l["nome"] or not l["data"]:
             continue
         if l["data"] < hoje:  # ignora leilões que já passaram
@@ -150,6 +177,9 @@ def main() -> int:
                 igual["fonte"] = ", ".join(fontes + [l["fonte"]])
             continue
 
+        if l.get("lat") is not None:      # já vem com o ponto exato (recinto)
+            saida.append(l)
+            continue
         achado = localizar(municipios, l["cidade"], l["uf"])
         if not achado:
             sem_local.append(f'{l["nome"]} ({l["cidade"]}/{l["uf"]})')
@@ -158,7 +188,6 @@ def main() -> int:
         saida.append(l)
 
     saida.sort(key=lambda x: (x["data"], x["hora"]))
-    recintos = ler_recintos()
     SAIDA.parent.mkdir(exist_ok=True)
     SAIDA.write_text(
         "// Arquivo gerado por scripts/gerar_dados.py - não edite à mão\n"

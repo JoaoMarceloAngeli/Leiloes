@@ -68,9 +68,13 @@
       <div class="popup-topo"><h3>${esc(l.nome)}</h3>${botaoFav(l)}</div>
       <p><b>${esc(fmtData(l.data))}</b>${l.hora ? " às " + esc(l.hora) : ""}</p>
       <p>${esc(l.cidade)}/${esc(l.uf)}${l.local ? " · " + esc(l.local) : ""}</p>
-      ${l.leiloeira ? `<p>Leiloeira: ${esc(l.leiloeira)}</p>` : ""}
+      ${l.previsto
+        ? `<p class="aviso-previsto">Leilão semanal: data prevista pelo dia fixo do recinto.
+           ${l.hora ? "" : "Horário não informado. "}Confirme com o recinto antes de ir.</p>`
+        : (l.leiloeira ? `<p>Leiloeira: ${esc(l.leiloeira)}</p>` : "")}
       <p>${[l.tipo, l.raca, l.modalidade].filter(Boolean).map(esc).join(" · ")}</p>
-      ${link ? `<p><a href="${esc(link)}" target="_blank" rel="noopener">Ver catálogo / transmissão →</a></p>` : ""}
+      ${link ? `<p><a href="${esc(link)}" target="_blank" rel="noopener">${l.previsto
+        ? "Abrir no Google Maps →" : "Ver catálogo / transmissão →"}</a></p>` : ""}
     </div>`;
   }
 
@@ -175,7 +179,8 @@
         <div class="item-nome">${esc(it.nome)}</div>
         <div class="item-info">${esc(it.cidade)}/${esc(it.uf)}${it.km != null ? ` · ${Math.round(it.km)} km` : ""}
           ${it.leiloeira ? " · " + esc(it.leiloeira) : ""}</div>
-        ${[it.tipo, it.raca, it.modalidade].filter(Boolean).map((t) => `<span class="etiqueta">${esc(t)}</span>`).join("")}`;
+        ${[it.tipo, it.raca, it.modalidade].filter(Boolean).map((t) => `<span class="etiqueta">${esc(t)}</span>`).join("")}
+        ${it.previsto ? '<span class="etiqueta etiqueta-recinto">Semanal · data prevista</span>' : ""}`;
     }
     li.addEventListener("click", () => destacar(it.id, true));
     return li;

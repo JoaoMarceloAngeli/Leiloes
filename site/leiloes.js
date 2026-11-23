@@ -2,6 +2,23 @@
 window.LEILOES_ATUALIZADO = "2026-11-23";
 window.LEILOES = [
  {
+  "nome": "Leilão semanal - Brasil Leilões",
+  "data": "2026-11-23",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Brasil Leilões",
+  "leiloeira": "Brasil Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/Jt48Wp2jd14m2wt77",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.439003,
+  "lng": -49.126895
+ },
+ {
   "nome": "1º Leilão Virtual Genética Nacional - Fazenda Nova & Parceiros - Etapa Prime",
   "data": "2026-11-23",
   "hora": "19:00",
@@ -80,6 +97,23 @@ window.LEILOES = [
   "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Mara Rosa Leilões",
+  "data": "2026-11-24",
+  "hora": "",
+  "cidade": "Mara Rosa",
+  "uf": "GO",
+  "local": "Mara Rosa Leilões",
+  "leiloeira": "Mara Rosa Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.01469,
+  "lng": -49.086151
  },
  {
   "nome": "Leilão Fazenda Paiquerê – Etapa II",
@@ -194,6 +228,23 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão semanal - Sindicato Rural de Porangatu",
+  "data": "2026-11-25",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Parque de Exposições Agropecuárias Hilton Monteiro da Rocha",
+  "leiloeira": "Sindicato Rural de Porangatu",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/WwFzUXauDNWgKEea8",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.443501,
+  "lng": -49.140695
+ },
+ {
   "nome": "Leilão Virtual Gado de Corte 25-11-2026 As 16h",
   "data": "2026-11-25",
   "hora": "16:00",
@@ -272,6 +323,40 @@ window.LEILOES = [
   "fonte": "central_leiloes, acnb_nelore, programa_leiloes, canal_do_criador",
   "lat": -12.9718,
   "lng": -38.5011
+ },
+ {
+  "nome": "Leilão semanal - Casa Branca Leilões",
+  "data": "2026-11-26",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Casa Branca Leilões",
+  "leiloeira": "Casa Branca Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/vBoVboUADiNmNEFH7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.26955,
+  "lng": -49.142464
+ },
+ {
+  "nome": "Leilão semanal - Formoso Leilões",
+  "data": "2026-11-26",
+  "hora": "",
+  "cidade": "Formoso",
+  "uf": "GO",
+  "local": "Formoso Leilões",
+  "leiloeira": "Formoso Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/ikFzhwVuH7UWjipN6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.653724,
+  "lng": -48.867818
  },
  {
   "nome": "3º Leilão Virtual Radar Pecuário - Edição Pantanal",
@@ -384,6 +469,23 @@ window.LEILOES = [
   "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Bambu Leilões",
+  "data": "2026-11-27",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Bambu Leilões",
+  "leiloeira": "Bambu Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/XLkT73SYQnRxAddk7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.29474,
+  "lng": -49.150588
  },
  {
   "nome": "Leilão Snl Fest 2026",
@@ -754,6 +856,23 @@ window.LEILOES = [
   "lng": -54.6295
  },
  {
+  "nome": "Leilão semanal - Brasil Leilões",
+  "data": "2026-11-30",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Brasil Leilões",
+  "leiloeira": "Brasil Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/Jt48Wp2jd14m2wt77",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.439003,
+  "lng": -49.126895
+ },
+ {
   "nome": "Leilão Evolution Brangus Sapucaia 3g",
   "data": "2026-11-30",
   "hora": "19:00",
@@ -866,6 +985,23 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão semanal - Mara Rosa Leilões",
+  "data": "2026-12-01",
+  "hora": "",
+  "cidade": "Mara Rosa",
+  "uf": "GO",
+  "local": "Mara Rosa Leilões",
+  "leiloeira": "Mara Rosa Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.01469,
+  "lng": -49.086151
+ },
+ {
   "nome": "Leilão Nelore Paranã - Especial Final de Ano.",
   "data": "2026-12-01",
   "hora": "19:00",
@@ -914,6 +1050,23 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão semanal - Sindicato Rural de Porangatu",
+  "data": "2026-12-02",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Parque de Exposições Agropecuárias Hilton Monteiro da Rocha",
+  "leiloeira": "Sindicato Rural de Porangatu",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/WwFzUXauDNWgKEea8",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.443501,
+  "lng": -49.140695
+ },
+ {
   "nome": "Leilão Seleção Vitória Diamantino",
   "data": "2026-12-02",
   "hora": "19:00",
@@ -960,6 +1113,40 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Casa Branca Leilões",
+  "data": "2026-12-03",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Casa Branca Leilões",
+  "leiloeira": "Casa Branca Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/vBoVboUADiNmNEFH7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.26955,
+  "lng": -49.142464
+ },
+ {
+  "nome": "Leilão semanal - Formoso Leilões",
+  "data": "2026-12-03",
+  "hora": "",
+  "cidade": "Formoso",
+  "uf": "GO",
+  "local": "Formoso Leilões",
+  "leiloeira": "Formoso Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/ikFzhwVuH7UWjipN6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.653724,
+  "lng": -48.867818
  },
  {
   "nome": "Shopping Vitória Diamantino",
@@ -1040,6 +1227,23 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Bambu Leilões",
+  "data": "2026-12-04",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Bambu Leilões",
+  "leiloeira": "Bambu Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/XLkT73SYQnRxAddk7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.29474,
+  "lng": -49.150588
  },
  {
   "nome": "3º Leilão de Corte dos Amigos - Dourados/ms",
@@ -1314,6 +1518,23 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão semanal - Brasil Leilões",
+  "data": "2026-12-07",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Brasil Leilões",
+  "leiloeira": "Brasil Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/Jt48Wp2jd14m2wt77",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.439003,
+  "lng": -49.126895
+ },
+ {
   "nome": "4º Leilão Virtual Fazenda Império",
   "data": "2026-12-07",
   "hora": "19:00",
@@ -1328,6 +1549,23 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Mara Rosa Leilões",
+  "data": "2026-12-08",
+  "hora": "",
+  "cidade": "Mara Rosa",
+  "uf": "GO",
+  "local": "Mara Rosa Leilões",
+  "leiloeira": "Mara Rosa Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.01469,
+  "lng": -49.086151
  },
  {
   "nome": "2º Leilão Virtual Matrizes Mato Verde",
@@ -1376,6 +1614,23 @@ window.LEILOES = [
   "fonte": "canal_do_boi",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Sindicato Rural de Porangatu",
+  "data": "2026-12-09",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Parque de Exposições Agropecuárias Hilton Monteiro da Rocha",
+  "leiloeira": "Sindicato Rural de Porangatu",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/WwFzUXauDNWgKEea8",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.443501,
+  "lng": -49.140695
  },
  {
   "nome": "Leilão Gran Reserva Tradição Azul",
@@ -1442,6 +1697,40 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão semanal - Casa Branca Leilões",
+  "data": "2026-12-10",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Casa Branca Leilões",
+  "leiloeira": "Casa Branca Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/vBoVboUADiNmNEFH7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.26955,
+  "lng": -49.142464
+ },
+ {
+  "nome": "Leilão semanal - Formoso Leilões",
+  "data": "2026-12-10",
+  "hora": "",
+  "cidade": "Formoso",
+  "uf": "GO",
+  "local": "Formoso Leilões",
+  "leiloeira": "Formoso Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/ikFzhwVuH7UWjipN6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.653724,
+  "lng": -48.867818
+ },
+ {
   "nome": "Leilão Touros Império",
   "data": "2026-12-10",
   "hora": "19:00",
@@ -1488,6 +1777,23 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -21.6105,
   "lng": -55.1678
+ },
+ {
+  "nome": "Leilão semanal - Bambu Leilões",
+  "data": "2026-12-11",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Bambu Leilões",
+  "leiloeira": "Bambu Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/XLkT73SYQnRxAddk7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.29474,
+  "lng": -49.150588
  },
  {
   "nome": "Leilão Joiás da Raça",
@@ -1666,6 +1972,23 @@ window.LEILOES = [
   "lng": -54.6295
  },
  {
+  "nome": "Leilão semanal - Brasil Leilões",
+  "data": "2026-12-14",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Brasil Leilões",
+  "leiloeira": "Brasil Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/Jt48Wp2jd14m2wt77",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.439003,
+  "lng": -49.126895
+ },
+ {
   "nome": "Leilão Confraternização 2026 - Leilão Virtual Qualidade Total e Leilão Central Pantanal Coxim",
   "data": "2026-12-14",
   "hora": "18:00",
@@ -1714,6 +2037,23 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão semanal - Mara Rosa Leilões",
+  "data": "2026-12-15",
+  "hora": "",
+  "cidade": "Mara Rosa",
+  "uf": "GO",
+  "local": "Mara Rosa Leilões",
+  "leiloeira": "Mara Rosa Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.01469,
+  "lng": -49.086151
+ },
+ {
   "nome": "Leilão Virtual Nelore Ibaneis.",
   "data": "2026-12-15",
   "hora": "19:00",
@@ -1744,6 +2084,23 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Sindicato Rural de Porangatu",
+  "data": "2026-12-16",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Parque de Exposições Agropecuárias Hilton Monteiro da Rocha",
+  "leiloeira": "Sindicato Rural de Porangatu",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/WwFzUXauDNWgKEea8",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.443501,
+  "lng": -49.140695
  },
  {
   "nome": "Leilão Virtual Nelore Ibaneis",
@@ -1778,6 +2135,40 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Leilão semanal - Casa Branca Leilões",
+  "data": "2026-12-17",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Casa Branca Leilões",
+  "leiloeira": "Casa Branca Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/vBoVboUADiNmNEFH7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.26955,
+  "lng": -49.142464
+ },
+ {
+  "nome": "Leilão semanal - Formoso Leilões",
+  "data": "2026-12-17",
+  "hora": "",
+  "cidade": "Formoso",
+  "uf": "GO",
+  "local": "Formoso Leilões",
+  "leiloeira": "Formoso Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/ikFzhwVuH7UWjipN6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.653724,
+  "lng": -48.867818
+ },
+ {
   "nome": "6º Leilão Nelore Bank Matrizes",
   "data": "2026-12-17",
   "hora": "19:00",
@@ -1808,6 +2199,23 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Leilão semanal - Bambu Leilões",
+  "data": "2026-12-18",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Bambu Leilões",
+  "leiloeira": "Bambu Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/XLkT73SYQnRxAddk7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.29474,
+  "lng": -49.150588
  },
  {
   "nome": "Inauguração do Instituto Transbordar",
