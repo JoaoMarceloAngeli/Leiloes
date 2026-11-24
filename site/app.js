@@ -466,6 +466,11 @@
     $("ver-calendario").classList.toggle("ativo", !$("calendario").hidden);
     if ($("calendario").hidden) diaEscolhido = "";
     render(false);
+    if (!$("calendario").hidden) {   // mostra o calendário, que fica mais abaixo no painel
+      const caixa = $("painel"), topo = caixa.querySelector("header").offsetHeight;
+      caixa.scrollTo({ top: caixa.scrollTop + $("calendario").getBoundingClientRect().top
+        - caixa.getBoundingClientRect().top - topo - 8, behavior: "smooth" });
+    }
   });
   $("cal-ant").addEventListener("click", () => { mesVisto.setMonth(mesVisto.getMonth() - 1); desenharCalendario(); });
   $("cal-prox").addEventListener("click", () => { mesVisto.setMonth(mesVisto.getMonth() + 1); desenharCalendario(); });
