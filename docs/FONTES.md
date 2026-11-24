@@ -174,6 +174,14 @@ Não trazem agenda, mas listam **todos os leiloeiros registrados**. Use para ach
 | [ ] | BA | [Juceb](https://www.ba.gov.br/juceb/home/matriculas-e-carteira-profissional/leiloeiros) |
 | [ ] | Demais UFs | Junta Comercial de cada estado (seção "Leiloeiros") |
 
+### Busca na internet por leilões de GO (24/11/2026)
+| Fonte | Resultado |
+|---|---|
+| [leolemes.com.br](https://leolemes.com.br/) (leiloeiro rural) | **sem robots.txt**; não é agenda com datas, mas lista 4 leilões semanais: Andaluz Leilões (Bela Vista de Goiás, segunda 19h), Goiatuba Leilões (Goiatuba, terça 18h), Magno Leilões (Piracanjuba, quarta 19h), Santa Fé Leilões (Pontalina, quinta 18h; GO-217 km 12, Fazenda Serra Negra). Falta o link do Maps de cada um para entrar como recinto |
+| agendadosleiloes.com.br | domínio não existe mais (DNS) |
+| [databoi.com.br](https://databoi.com.br/leiloeiras) | só página de divulgação com dados ilustrativos; sem agenda |
+| Outros nomes achados (confirmar no Maps) | Giraboi Leilões (Bela Vista de Goiás, terça 19h, Facebook), Bela Vista Leilões (Bela Vista de Goiás, sexta 20h, Comprerural, página antiga), Pecuária de Guapó (Guapó, sexta 20h, YouTube), Sindicato Rural de Rio Verde (notícia de 2011) |
+
 ---
 
 ### Como registrar o andamento
