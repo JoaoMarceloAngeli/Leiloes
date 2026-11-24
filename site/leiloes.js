@@ -19,22 +19,6 @@ window.LEILOES = [
   "lng": -49.086151
  },
  {
-  "nome": "Leilão Fazenda Paiquerê – Etapa II",
-  "data": "2026-11-24",
-  "hora": "18:30",
-  "cidade": "Lages",
-  "uf": "SC",
-  "local": "Transmissão: Lance Rural",
-  "leiloeira": "",
-  "tipo": "Geral",
-  "modalidade": "Transmitido na TV",
-  "raca": "",
-  "link": "https://canaldocriador.com.br/leilao/leilao-fazenda-paiquere-etapa-ii/",
-  "fonte": "canal_do_criador",
-  "lat": -27.815,
-  "lng": -50.3259
- },
- {
   "nome": "Leilão Nova Geração Bela Alvorada - Nelore Zan & Convidados",
   "data": "2026-11-24",
   "hora": "19:00",
@@ -62,7 +46,7 @@ window.LEILOES = [
   "modalidade": "Transmitido na TV",
   "raca": "Braford",
   "link": "https://programaleiloes.com/agenda/leilao/91848-ii-remate-estancia-carcavio-e-fazenda-da-balanca",
-  "fonte": "programa_leiloes, canal_do_criador",
+  "fonte": "programa_leiloes",
   "lat": -30.0318,
   "lng": -51.2065
  },
@@ -126,7 +110,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91662-2-etapa-leilao-virtual-qualidade-corona",
-  "fonte": "programa_leiloes, canal_do_criador",
+  "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -175,25 +159,9 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91731-leilao-especial-femeas-fazenda-modotti",
-  "fonte": "programa_leiloes, canal_do_criador",
+  "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
- },
- {
-  "nome": "Leilão Nelore Do Morro",
-  "data": "2026-11-25",
-  "hora": "19:00",
-  "cidade": "Araçatuba",
-  "uf": "SP",
-  "local": "Transmissão: Lance Rural",
-  "leiloeira": "",
-  "tipo": "Geral",
-  "modalidade": "Transmitido na TV",
-  "raca": "Brangus",
-  "link": "https://canaldocriador.com.br/leilao/leilao-nelore-do-morro/",
-  "fonte": "canal_do_criador",
-  "lat": -21.2076,
-  "lng": -50.4401
  },
  {
   "nome": "4° Grupo Suprema - Live",
@@ -223,7 +191,7 @@ window.LEILOES = [
   "modalidade": "Presencial + TV",
   "raca": "Nelore",
   "link": "https://www.centralleiloes.com.br/leilao-2604-leilao-chave-de-ouro--1aa-etapa",
-  "fonte": "central_leiloes, acnb_nelore, programa_leiloes, canal_do_criador",
+  "fonte": "central_leiloes, acnb_nelore, programa_leiloes",
   "lat": -12.9718,
   "lng": -38.5011
  },
@@ -305,7 +273,7 @@ window.LEILOES = [
   "modalidade": "Transmitido na TV",
   "raca": "Angus - Brangus - Ultrablack",
   "link": "https://programaleiloes.com/agenda/leilao/91856-leilao-4-linhas-de-touros",
-  "fonte": "programa_leiloes, canal_do_criador",
+  "fonte": "programa_leiloes",
   "lat": -30.0318,
   "lng": -51.2065
  },
@@ -337,7 +305,7 @@ window.LEILOES = [
   "modalidade": "Presencial + TV",
   "raca": "Nelore",
   "link": "https://www.centralleiloes.com.br/leilao-2606-leilao-chave-de-ouro--2aa-etapa",
-  "fonte": "central_leiloes, acnb_nelore, programa_leiloes, canal_do_criador",
+  "fonte": "central_leiloes, acnb_nelore, programa_leiloes",
   "lat": -12.9718,
   "lng": -38.5011
  },
@@ -423,22 +391,6 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
-  "nome": "Leilão Especial Blue November – Etapa Corte",
-  "data": "2026-11-27",
-  "hora": "20:00",
-  "cidade": "Uberaba",
-  "uf": "MG",
-  "local": "Transmissão: Canal Rural",
-  "leiloeira": "",
-  "tipo": "Corte",
-  "modalidade": "Transmitido na TV",
-  "raca": "",
-  "link": "https://canaldocriador.com.br/leilao/leilao-especial-blue-november-etapa-corte/",
-  "fonte": "canal_do_criador",
-  "lat": -19.7472,
-  "lng": -47.9381
- },
- {
   "nome": "4° Grupo Suprema - 3ª Etapa",
   "data": "2026-11-28",
   "hora": "09:00",
@@ -514,7 +466,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO - Senepol",
   "link": "https://programaleiloes.com/agenda/leilao/91809-36-leilao-genetica-conquista-nelore-senepol",
-  "fonte": "programa_leiloes, canal_do_criador",
+  "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -588,13 +540,13 @@ window.LEILOES = [
   "hora": "20:00",
   "cidade": "Salinópolis",
   "uf": "PA",
-  "local": "Transmissão: Lance Rural",
+  "local": "",
   "leiloeira": "Central Leilões",
   "tipo": "Geral",
   "modalidade": "Presencial + TV",
-  "raca": "Guzerá",
+  "raca": "",
   "link": "https://www.centralleiloes.com.br/leilao-2609-xx-leilao-evolucao-do-guzera",
-  "fonte": "central_leiloes, canal_do_criador",
+  "fonte": "central_leiloes",
   "lat": -0.630815,
   "lng": -47.3465
  },
@@ -626,7 +578,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91674-leilao-virtual-touros-jovens-da-matinha",
-  "fonte": "programa_leiloes, canal_do_criador",
+  "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -677,38 +629,6 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
- },
- {
-  "nome": "2º Leilão Direito de Viver",
-  "data": "2026-11-29",
-  "hora": "11:30",
-  "cidade": "Boa Vista",
-  "uf": "RR",
-  "local": "Transmissão: Lance Rural",
-  "leiloeira": "",
-  "tipo": "Corte",
-  "modalidade": "Transmitido na TV",
-  "raca": "",
-  "link": "https://canaldocriador.com.br/leilao/2o-leilao-direito-de-viver/",
-  "fonte": "canal_do_criador",
-  "lat": 2.82384,
-  "lng": -60.6753
- },
- {
-  "nome": "Leilão Reserva Especial Japarandura Ganar – Etapa Touros",
-  "data": "2026-11-29",
-  "hora": "13:00",
-  "cidade": "Araçatuba",
-  "uf": "SP",
-  "local": "Transmissão: Lance Rural",
-  "leiloeira": "",
-  "tipo": "Reprodutores",
-  "modalidade": "Transmitido na TV",
-  "raca": "Nelore",
-  "link": "https://canaldocriador.com.br/leilao/leilao-reserva-especial-japarandura-ganar-etapa-touros/",
-  "fonte": "canal_do_criador",
-  "lat": -21.2076,
-  "lng": -50.4401
  },
  {
   "nome": "7º Leilão Capital do Nortão",
@@ -776,22 +696,6 @@ window.LEILOES = [
   "lng": -49.126895
  },
  {
-  "nome": "Leilão Evolution Brangus Sapucaia 3g",
-  "data": "2026-11-30",
-  "hora": "19:00",
-  "cidade": "Araçatuba",
-  "uf": "SP",
-  "local": "Transmissão: Canal do Boi",
-  "leiloeira": "Central Leilões",
-  "tipo": "Geral",
-  "modalidade": "Virtual",
-  "raca": "Brangus",
-  "link": "https://arrobaplay.com/leiloes/leilao-evolution-brangus-sapucaia-3g",
-  "fonte": "canal_do_boi",
-  "lat": -21.2076,
-  "lng": -50.4401
- },
- {
   "nome": "Leilão Nelore Paranã - Especial Final de Ano",
   "data": "2026-11-30",
   "hora": "19:00",
@@ -824,22 +728,6 @@ window.LEILOES = [
   "lng": -44.0383
  },
  {
-  "nome": "Leilão Reserva Especial Japarandura Ganar – Etapa Touros",
-  "data": "2026-11-30",
-  "hora": "19:00",
-  "cidade": "Araçatuba",
-  "uf": "SP",
-  "local": "Transmissão: Lance Rural",
-  "leiloeira": "",
-  "tipo": "Reprodutores",
-  "modalidade": "Transmitido na TV",
-  "raca": "Nelore",
-  "link": "https://canaldocriador.com.br/leilao/leilao-reserva-especial-japarandura-ganar-etapa-touros-2/",
-  "fonte": "canal_do_criador",
-  "lat": -21.2076,
-  "lng": -50.4401
- },
- {
   "nome": "Leilão Cpex Girolando",
   "data": "2026-11-30",
   "hora": "20:00",
@@ -870,22 +758,6 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -12.3513,
   "lng": -38.3791
- },
- {
-  "nome": "Leilão Seleção Especial Do Chicão – Grupo SP",
-  "data": "2026-11-30",
-  "hora": "20:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore",
-  "link": "https://canaldocriador.com.br/leilao/leilao-selecao-especial-do-chicao-grupo-sp/",
-  "fonte": "canal_do_criador",
-  "lat": -23.304,
-  "lng": -51.1691
  },
  {
   "nome": "Leilão semanal - Mara Rosa Leilões",
@@ -1111,7 +983,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91877-leilao-selecao-especial-do-chicao",
-  "fonte": "programa_leiloes",
+  "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -1283,7 +1155,7 @@ window.LEILOES = [
   "cidade": "São Paulo",
   "uf": "SP",
   "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "",
+  "leiloeira": "Programa Leilões",
   "tipo": "Geral",
   "modalidade": "Virtual",
   "raca": "",
@@ -1449,7 +1321,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91818-4-leilao-virtual-fazenda-imperio",
-  "fonte": "programa_leiloes",
+  "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -1471,6 +1343,22 @@ window.LEILOES = [
   "lng": -49.086151
  },
  {
+  "nome": "1º Leilão Virtual Nelore Xito",
+  "data": "2026-12-08",
+  "hora": "19:00",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "Estúdio de transmissão (local da fazenda não informado)",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Elite",
+  "modalidade": "Virtual",
+  "raca": "Nelore PO",
+  "link": "https://programaleiloes.com/agenda/leilao/91813-1-leilao-virtual-nelore-xito",
+  "fonte": "programa_leiloes, canal_do_criador",
+  "lat": -23.304,
+  "lng": -51.1691
+ },
+ {
   "nome": "2º Leilão Virtual Matrizes Mato Verde",
   "data": "2026-12-08",
   "hora": "19:00",
@@ -1483,22 +1371,6 @@ window.LEILOES = [
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91814-2-leilao-virtual-matrizes-mato-verde",
   "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
-  "nome": "Nelore Xito",
-  "data": "2026-12-08",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91813-nelore-xito",
-  "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -1536,6 +1408,22 @@ window.LEILOES = [
   "lng": -49.140695
  },
  {
+  "nome": "2° Leilão Elite Essência do Nelore",
+  "data": "2026-12-09",
+  "hora": "19:00",
+  "cidade": "Teresina",
+  "uf": "PI",
+  "local": "Transmissão: Internet",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Elite",
+  "modalidade": "Transmitido na TV",
+  "raca": "Nelore PO",
+  "link": "https://programaleiloes.com/agenda/leilao/91887-2-leilao-elite-essencia-do-nelore",
+  "fonte": "programa_leiloes",
+  "lat": -5.09194,
+  "lng": -42.8034
+ },
+ {
   "nome": "Leilão Gran Reserva Tradição Azul",
   "data": "2026-12-09",
   "hora": "19:00",
@@ -1566,22 +1454,6 @@ window.LEILOES = [
   "fonte": "canal_do_boi",
   "lat": -23.304,
   "lng": -51.1691
- },
- {
-  "nome": "Leilão Vitória",
-  "data": "2026-12-09",
-  "hora": "20:00",
-  "cidade": "Teresina",
-  "uf": "PI",
-  "local": "Transmissão: Internet",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Transmitido na TV",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91887-leilao-vitoria",
-  "fonte": "programa_leiloes",
-  "lat": -5.09194,
-  "lng": -42.8034
  },
  {
   "nome": "Nelore Shangrilá",
@@ -1645,7 +1517,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91891-leilao-touros-imperio",
-  "fonte": "programa_leiloes, canal_do_criador",
+  "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -1822,7 +1694,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91826-ii-leilao-conexao-genetica-e-amigos",
-  "fonte": "programa_leiloes",
+  "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -1919,7 +1791,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91829-leilao-virtual-nelore-ibaneis",
-  "fonte": "programa_leiloes",
+  "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -1968,7 +1840,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91831-leilao-virtual-nelore-ibaneis",
-  "fonte": "programa_leiloes",
+  "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
  },
@@ -2083,7 +1955,7 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO",
   "link": "https://programaleiloes.com/agenda/leilao/91835-6-leilao-nelore-bank-matrizes",
-  "fonte": "programa_leiloes",
+  "fonte": "programa_leiloes, canal_do_criador",
   "lat": -23.304,
   "lng": -51.1691
  },
