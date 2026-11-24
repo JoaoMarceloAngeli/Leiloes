@@ -10,6 +10,48 @@
 pela Ouvidoria-Geral do Estado, com destino à Agência Goiana de Defesa Agropecuária (Agrodefesa).
 Prazo legal de resposta: 20 dias, prorrogáveis por mais 10.
 
+> **Resposta conclusiva em 24/11/2026** (Despacho nº 1545/2026/AGRODEFESA/DTI-06223, processo SEI
+> 202600066016679): só indicou o portal Dados Abertos Goiás. Conferido em 24/11/2026:
+> - o conjunto [Eventos Agropecuários - AGRODEFESA](https://dadosabertos.go.gov.br/dataset/eventos-agropecuarios)
+>   tem arquivos de 2020 a 2025, mas **todos trazem cadastro de comerciantes de mudas e casas agropecuárias**
+>   (coluna `ds_classificacao`), nenhum evento, leilão, data ou recinto;
+> - "GTAs emitidas" e "Movimentação de animais" só trazem totais por espécie no ano;
+> - nenhum dos 39 conjuntos da Agrodefesa tem leilões, promotoras de eventos ou recintos.
+>
+> Os itens 1, 2 e 3 não foram atendidos. Cabe **recurso em até 10 dias (até 04/12/2026)**: texto abaixo.
+
+---
+
+**Recurso (1ª instância), protocolo 2026.1123.133352-18**
+
+Prezados,
+
+Apresento recurso contra a resposta ao pedido de acesso à informação nº 2026.1123.133352-18
+(Despacho nº 1545/2026/AGRODEFESA/DTI-06223), com base no art. 15 da Lei nº 12.527/2011.
+
+A resposta indicou o portal Dados Abertos Goiás, conjunto "Eventos Agropecuários - AGRODEFESA"
+(https://dadosabertos.go.gov.br/dataset/eventos-agropecuarios). Porém, conferi todos os arquivos desse
+conjunto (2020, 2021, 2022, 2023, 2024 e 2025) e eles contêm apenas o cadastro de comerciantes de mudas e
+casas agropecuárias (coluna "ds_classificacao": "COMERCIANTE DE MUDAS (CNPJ)", "CASA AGROPECUÁRIA - ...").
+Não há nenhum evento agropecuário, leilão, data, local ou entidade promotora. Os conjuntos "GTAs emitidas"
+e "Movimentação de animais" trazem apenas totais por espécie. Parece ter havido erro na publicação dos
+arquivos.
+
+Assim, a informação pedida não está disponível na fonte indicada (art. 11, § 6º, da Lei 12.527/2011), e os
+três itens do pedido continuam sem resposta:
+
+1. leilões de bovinos e bubalinos comunicados ou autorizados em 2026, e os já agendados, com data,
+   município, local/recinto e entidade promotora;
+2. entidades promotoras de eventos pecuários cadastradas no SIDAGO (razão social, CNPJ e município);
+3. recintos/locais de aglomeração animal que recebem leilões (nome, endereço ou coordenadas e município).
+
+Peço que as informações sejam fornecidas em formato aberto (CSV ou XLSX). Se alguma delas não existir ou
+tiver restrição de acesso, peço que isso seja informado expressamente, com a fundamentação legal, e que as
+demais sejam entregues. Sugiro também a correção dos arquivos publicados no conjunto "Eventos
+Agropecuários".
+
+Atenciosamente,
+
 **Por que funciona:** pela Instrução Normativa Agrodefesa nº 06/2020, todo leilão de animais em Goiás
 precisa ser comunicado à unidade local da Agrodefesa com pelo menos 5 dias de antecedência, e as entidades
 promotoras de eventos pecuários são cadastradas no SIDAGO. A agência já tem esses dados.
