@@ -14,7 +14,8 @@ Prazo legal de resposta: 20 dias, prorrogáveis por mais 10.
 > 202600066016679): só indicou o portal Dados Abertos Goiás. Conferido em 24/11/2026:
 > - o conjunto [Eventos Agropecuários - AGRODEFESA](https://dadosabertos.go.gov.br/dataset/eventos-agropecuarios)
 >   tem arquivos de 2020 a 2025, mas **todos trazem cadastro de comerciantes de mudas e casas agropecuárias**
->   (coluna `ds_classificacao`), nenhum evento, leilão, data ou recinto;
+>   (coluna `ds_classificacao`; 146 registros no total), nenhum evento, leilão, data ou recinto; o dicionário
+>   de dados também só descreve campos de cadastro de estabelecimento;
 > - "GTAs emitidas" e "Movimentação de animais" só trazem totais por espécie no ano;
 > - nenhum dos 39 conjuntos da Agrodefesa tem leilões, promotoras de eventos ou recintos.
 >
@@ -35,7 +36,9 @@ conjunto (2020, 2021, 2022, 2023, 2024 e 2025) e eles contêm apenas o cadastro 
 casas agropecuárias (coluna "ds_classificacao": "COMERCIANTE DE MUDAS (CNPJ)", "CASA AGROPECUÁRIA - ...").
 Não há nenhum evento agropecuário, leilão, data, local ou entidade promotora. Os conjuntos "GTAs emitidas"
 e "Movimentação de animais" trazem apenas totais por espécie. Parece ter havido erro na publicação dos
-arquivos.
+arquivos. O próprio dicionário de dados do conjunto descreve apenas campos de cadastro de estabelecimento
+(razão social, inscrição estadual, licença ambiental, isenção de registro) e não possui nenhum campo de data,
+tipo ou local de evento, o que confirma que os arquivos publicados não correspondem a eventos agropecuários.
 
 Assim, a informação pedida não está disponível na fonte indicada (art. 11, § 6º, da Lei 12.527/2011), e os
 três itens do pedido continuam sem resposta:
