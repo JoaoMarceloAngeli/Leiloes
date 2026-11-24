@@ -164,3 +164,20 @@ input:focus, select:focus { outline: 2px solid var(--verde); outline-offset: 0; 
 .etiqueta-recinto { background: var(--marrom-claro); color: var(--marrom-escuro); }
 
 .aviso-previsto { font-size: 12px; color: var(--marrom-escuro); background: var(--marrom-claro); padding: 4px 6px; border-radius: 6px; margin: 4px 0 !important; }
+
+/* Botões do card: WhatsApp, rota, Waze, lembrete */
+.acoes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.acao {
+  display: inline-block; padding: 6px 10px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  background: var(--verde-claro); color: var(--verde-escuro) !important; border: 1px solid var(--verde);
+  text-decoration: none; cursor: pointer; line-height: 1.2;
+}
+.acao:hover { background: var(--verde); }
+.acao-zap { background: #25d366; border-color: #25d366; color: #fff !important; }
+.acao-zap:hover { background: #1ebe5a; }
+#instalar { background: var(--marrom-claro); border-color: var(--marrom); color: var(--marrom-escuro); font-weight: 600; }
+.dica { margin: 0; font-size: 13px; background: var(--marrom-claro); color: var(--marrom-escuro);
+  padding: 8px 10px; border-radius: 8px; }
+.dica button { margin-left: 6px; padding: 2px 8px; font-size: 12px; }
+[hidden] { display: none !important; }
+@media (max-width: 760px) { .acao { padding: 8px 12px; font-size: 14px; } }

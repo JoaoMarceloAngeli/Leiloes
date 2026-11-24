@@ -4,6 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mapa de Leilões</title>
+  <meta name="description" content="Leilões de gado do Brasil no mapa: datas, locais, rota e lembrete.">
+  <meta name="theme-color" content="#8cc584">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icone-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icone-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Leilões">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
@@ -31,7 +38,20 @@
           <option value="90">Próximos 90 dias</option>
         </select>
       </div>
+      <div class="linha">
+        <select id="f-raca"><option value="">Todas as raças</option></select>
+        <select id="f-distancia">
+          <option value="">Qualquer distância</option>
+          <option value="50">Até 50 km de mim</option>
+          <option value="100">Até 100 km de mim</option>
+          <option value="200">Até 200 km de mim</option>
+          <option value="300">Até 300 km de mim</option>
+        </select>
+      </div>
       <button id="perto" type="button">📍 Leilões perto de mim</button>
+      <button id="instalar" type="button" hidden>📲 Instalar no celular</button>
+      <p id="dica-ios" class="dica" hidden>📲 Para instalar no iPhone: toque em <b>Compartilhar</b> e depois em
+        <b>Adicionar à Tela de Início</b>. <button type="button">Entendi</button></p>
       <label class="opcao"><input id="sem-virtuais" type="checkbox" autocomplete="off"> Esconder leilões virtuais</label>
       <label class="opcao"><input id="com-recintos" type="checkbox" checked autocomplete="off"> Mostrar recintos de leilão</label>
       <label class="opcao"><input id="so-favoritos" type="checkbox" autocomplete="off"> <span class="estrela">★</span> Só favoritos</label>

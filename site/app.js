@@ -8,8 +8,11 @@
   const paraData = (iso) => new Date(iso + "T00:00:00");
   const fmtData = (iso) => paraData(iso).toLocaleDateString("pt-BR",
     { weekday: "short", day: "2-digit", month: "short" });
+  const fmtDataLonga = (iso) => paraData(iso).toLocaleDateString("pt-BR",
+    { weekday: "long", day: "2-digit", month: "long" });
   const linkSeguro = (u) => /^https?:\/\//i.test(u || "") ? u : "";
   const ehVirtual = (l) => l.modalidade === "Virtual";
+  const ENDERECO_SITE = location.protocol.startsWith("http") ? location.origin + location.pathname : "";
 
   function distanciaKm(a, b) {
     const r = Math.PI / 180, R = 6371;
@@ -32,6 +35,12 @@
   const locaisComData = new Set(itens.filter((it) => it.previsto).map((it) => [it.leiloeira, it.cidade, it.uf].join("|")));
   const temData = (r) => locaisComData.has([r.nome, r.cidade, r.uf].join("|"));
 
+  // Raças: a fonte escreve de vários jeitos ("Nelore PO - Senepol", "Angus - Brangus - Ultrablack")
+  const RACAS = ["Nelore", "Nelore Pintado", "Angus", "Brangus", "Ultrablack", "Senepol", "Brahman", "Braford",
+    "Hereford", "Tabapuã", "Guzerá", "Sindi", "Gir", "Gir Leiteiro", "Girolando", "Holandês", "Jersey", "Caracu"];
+  const textoRaca = (it) => semAcento(" " + [it.raca, it.nome].join(" ") + " ");
+  const temRaca = (it, raca) => new RegExp("[^a-z]" + semAcento(raca) + "[^a-z]").test(textoRaca(it));
+
   // ---------- Favoritos (guardados só neste navegador) ----------
   const CHAVE_FAV = "mapa-leiloes:favoritos";
   let favoritos = new Set();
@@ -44,6 +53,57 @@
   const botaoFav = (it) => `<button type="button" class="fav${ehFavorito(it) ? " ativo" : ""}" data-id="${it.id}"
     title="${ehFavorito(it) ? "Remover dos favoritos" : "Favoritar"}" aria-pressed="${ehFavorito(it)}">${ehFavorito(it) ? "★" : "☆"}</button>`;
 
+  // ---------- Compartilhar, rota e agenda ----------
+  function textoCompartilhar(it) {
+    const linhas = it.recinto
+      ? [`*${it.nome}*`, `Local de leilão em ${it.cidade}/${it.uf}`, it.dias || ""]
+      : [`*${it.nome}*`, `📅 ${fmtDataLonga(it.data)}${it.hora ? " às " + it.hora : ""}${it.previsto ? " (data prevista)" : ""}`,
+        `📍 ${it.cidade}/${it.uf}${it.local && !ehVirtual(it) ? " · " + it.local : ""}`,
+        it.modalidade ? `${it.modalidade}${it.raca ? " · " + it.raca : ""}` : ""];
+    const link = linkSeguro(it.link) || linkSeguro(it.maps);
+    if (link) linhas.push(link);
+    if (ENDERECO_SITE) linhas.push(`Mapa de leilões: ${ENDERECO_SITE}?busca=${encodeURIComponent(it.nome)}`);
+    return linhas.filter(Boolean).join("\n");
+  }
+
+  function botoesAcao(it) {
+    const zap = `https://wa.me/?text=${encodeURIComponent(textoCompartilhar(it))}`;
+    const rota = `https://www.google.com/maps/dir/?api=1&destination=${it.lat},${it.lng}`;
+    const waze = `https://waze.com/ul?ll=${it.lat},${it.lng}&navigate=yes`;
+    const fisico = it.recinto || !ehVirtual(it);   // leilão virtual: o ponto é o estúdio, não faz sentido ir
+    return `<div class="acoes">
+      <a class="acao acao-zap" href="${esc(zap)}" target="_blank" rel="noopener">WhatsApp</a>
+      ${fisico ? `<a class="acao" href="${esc(rota)}" target="_blank" rel="noopener">Como chegar</a>
+                  <a class="acao" href="${esc(waze)}" target="_blank" rel="noopener">Waze</a>` : ""}
+      ${it.recinto ? "" : `<button type="button" class="acao" data-lembrar="${it.id}">Lembrar</button>`}
+    </div>`;
+  }
+
+  // Arquivo de agenda (.ics): o celular abre no calendário. Sem horário vira evento de dia inteiro.
+  function baixarAgenda(it) {
+    const dia = it.data.replace(/-/g, "");
+    const fimDia = new Date(paraData(it.data).getTime() + 864e5).toISOString().slice(0, 10).replace(/-/g, "");
+    const quando = it.hora
+      ? [`DTSTART:${dia}T${it.hora.replace(":", "")}00`, `DURATION:PT3H`]
+      : [`DTSTART;VALUE=DATE:${dia}`, `DTEND;VALUE=DATE:${fimDia}`];
+    const linha = (t) => String(t).replace(/[\\,;]/g, (c) => "\\" + c).replace(/\n/g, "\\n");
+    const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mapa de Leiloes//PT-BR", "BEGIN:VEVENT",
+      `UID:${it.chave.replace(/[^\w]/g, "")}@mapa-leiloes`,
+      `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").slice(0, 15)}Z`,
+      ...quando,
+      `SUMMARY:${linha(it.nome)}`,
+      `LOCATION:${linha(`${it.local ? it.local + ", " : ""}${it.cidade}/${it.uf}`)}`,
+      `DESCRIPTION:${linha(textoCompartilhar(it))}`,
+      "BEGIN:VALARM", "TRIGGER:-P1D", "ACTION:DISPLAY", `DESCRIPTION:${linha("Amanhã: " + it.nome)}`, "END:VALARM",
+      "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+    a.download = `leilao-${it.data}.ics`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+
   // ---------- Mapa ----------
   const mapa = L.map("mapa", { zoomControl: true }).setView([-14.5, -52], 4);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -55,12 +115,12 @@
   mapa.addLayer(grupo);
   mapa.addLayer(camadaRecintos);
   const marcadores = new Map();
-  let minhaPosicao = null;
+  let minhaPosicao = null, meuPonto = null;
   const celular = window.matchMedia("(max-width: 760px)");
   const listaVisivel = () => !celular.matches || document.body.classList.contains("lista-aberta");
   // Balão sempre inteiro na tela (no celular, deixa espaço para o botão "Lista")
   const opcoesBalao = () => ({
-    maxWidth: celular.matches ? 260 : 320,
+    maxWidth: celular.matches ? 270 : 320,
     autoPanPaddingTopLeft: [16, 16],
     autoPanPaddingBottomRight: [16, celular.matches ? 80 : 16],
   });
@@ -76,21 +136,21 @@
            ${l.hora ? "" : "Horário não informado. "}Confirme com o recinto antes de ir.</p>`
         : (l.leiloeira ? `<p>Leiloeira: ${esc(l.leiloeira)}</p>` : "")}
       <p>${[l.tipo, l.raca, l.modalidade].filter(Boolean).map(esc).join(" · ")}</p>
-      ${link ? `<p><a href="${esc(link)}" target="_blank" rel="noopener">${l.previsto
-        ? "Abrir no Google Maps →" : "Ver catálogo / transmissão →"}</a></p>` : ""}
+      ${link && !l.previsto ? `<p><a href="${esc(link)}" target="_blank" rel="noopener">Ver catálogo / transmissão →</a></p>` : ""}
+      ${botoesAcao(l)}
     </div>`;
   }
 
   function popupRecinto(r) {
-    const maps = linkSeguro(r.maps), site = linkSeguro(r.site);
+    const site = linkSeguro(r.site);
     return `<div class="popup">
       <div class="popup-topo"><h3>${esc(r.nome)}</h3>${botaoFav(r)}</div>
-      <p>Recinto de leilão · ${esc(r.cidade)}/${esc(r.uf)}</p>
-      <p>${r.dias ? "<b>" + esc(r.dias) + "</b>" : "Dias dos leilões não informados: confirme com o recinto."}</p>
+      <p>Local de leilão · ${esc(r.cidade)}/${esc(r.uf)}</p>
+      <p>${r.dias ? "<b>" + esc(r.dias) + "</b>" : "Dias dos leilões não informados: confirme com o local."}</p>
       ${r.telefone ? `<p>Telefone: ${esc(r.telefone)}</p>` : ""}
       ${r.obs ? `<p>${esc(r.obs)}</p>` : ""}
       ${site ? `<p><a href="${esc(site)}" target="_blank" rel="noopener">Site / Instagram →</a></p>` : ""}
-      ${maps ? `<p><a href="${esc(maps)}" target="_blank" rel="noopener">Abrir no Google Maps →</a></p>` : ""}
+      ${botoesAcao(r)}
     </div>`;
   }
 
@@ -134,11 +194,14 @@
   preencher($("f-uf"), itens.map((it) => it.uf));
   preencher($("f-tipo"), soLeiloes.map((l) => l.tipo));
   preencher($("f-modalidade"), soLeiloes.map((l) => l.modalidade));
+  RACAS.filter((r) => soLeiloes.some((l) => temRaca(l, r)))
+    .forEach((r) => $("f-raca").add(new Option(r, r)));
 
   function filtrados() {
     const termo = semAcento($("busca").value.trim());
-    const uf = $("f-uf").value, tipo = $("f-tipo").value, mod = $("f-modalidade").value;
+    const uf = $("f-uf").value, tipo = $("f-tipo").value, mod = $("f-modalidade").value, raca = $("f-raca").value;
     const dias = Number($("f-periodo").value);
+    const raio = Number($("f-distancia").value);
     const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
     const limite = dias ? new Date(hoje.getTime() + dias * 864e5) : null;
     const semVirtuais = $("sem-virtuais").checked;
@@ -148,12 +211,14 @@
     let lista = itens.filter((it) => {
       if (soFavoritos && !ehFavorito(it)) return false;
       if (uf && it.uf !== uf) return false;
+      if (raio && minhaPosicao && distanciaKm(minhaPosicao, it) > raio) return false;
       if (termo && !semAcento([it.nome, it.cidade, it.uf, it.leiloeira, it.raca, it.local, it.obs]
         .join(" ")).includes(termo)) return false;
-      if (it.recinto) return comRecintos && !tipo && !mod && !temData(it);   // recinto não tem data, tipo nem modalidade
+      if (it.recinto) return comRecintos && !tipo && !mod && !raca && !temData(it);   // local sem data, tipo, raça
       return (!semVirtuais || !ehVirtual(it)) &&
         (!tipo || it.tipo === tipo) &&
         (!mod || it.modalidade === mod) &&
+        (!raca || temRaca(it, raca)) &&
         (!limite || paraData(it.data) <= limite);
     });
     if (minhaPosicao) {
@@ -172,10 +237,10 @@
     if (it.recinto) {
       li.className = "item-recinto";
       li.innerHTML = `${botaoFav(it)}
-        <div class="item-data">Recinto${it.dias ? " · " + esc(it.dias) : ""}</div>
+        <div class="item-data">Local de leilão${it.dias ? " · " + esc(it.dias) : ""}</div>
         <div class="item-nome">${esc(it.nome)}</div>
         <div class="item-info">${esc(it.cidade)}/${esc(it.uf)}${it.km != null ? ` · ${Math.round(it.km)} km` : ""}</div>
-        <span class="etiqueta etiqueta-recinto">Recinto de leilão</span>`;
+        <span class="etiqueta etiqueta-recinto">Sem data</span>`;
     } else {
       li.innerHTML = `${botaoFav(it)}
         <div class="item-data">${esc(fmtData(it.data))}${it.hora ? " · " + esc(it.hora) : ""}</div>
@@ -204,12 +269,15 @@
 
     const nL = lista.filter((it) => !it.recinto).length, nR = lista.length - nL;
     const cidades = new Set(lista.map((it) => it.cidade + it.uf)).size;
-    $("resumo").textContent = `${nL} leilão(ões)${nR ? ` e ${nR} recinto(s)` : ""} em ${cidades} cidade(s)` +
-      (minhaPosicao ? " · mais próximos primeiro" : "");
+    const raio = Number($("f-distancia").value);
+    $("resumo").textContent = `${nL} leilão(ões)${nR ? ` e ${nR} local(is) sem data` : ""} em ${cidades} cidade(s)` +
+      (minhaPosicao ? (raio ? ` · até ${raio} km de você` : " · mais próximos primeiro") : "");
 
-    // Ao buscar ou trocar de estado, leva o mapa até o que foi encontrado
+    // Ao buscar, trocar de estado ou de distância, leva o mapa até o que foi encontrado
     if (enquadrar && lista.length) {
-      mapa.fitBounds(L.latLngBounds(lista.map((it) => [it.lat, it.lng])), { padding: [40, 40], maxZoom: 11 });
+      const pontos = lista.map((it) => [it.lat, it.lng]);
+      if (minhaPosicao && raio) pontos.push([minhaPosicao.lat, minhaPosicao.lng]);
+      mapa.fitBounds(L.latLngBounds(pontos), { padding: [40, 40], maxZoom: 11 });
     }
   }
 
@@ -256,8 +324,15 @@
     }
   }
 
-  // Estrela (na lista ou no balão do mapa)
+  // Estrela e "Lembrar" (na lista ou no balão do mapa)
   document.addEventListener("click", (e) => {
+    const lembrar = e.target.closest("[data-lembrar]");
+    if (lembrar) {
+      e.preventDefault();
+      const it = porId.get(lembrar.dataset.lembrar);
+      if (it) baixarAgenda(it);
+      return;
+    }
     const botao = e.target.closest(".fav");
     if (!botao) return;
     e.stopPropagation();
@@ -274,6 +349,33 @@
     if ($("so-favoritos").checked && !ativo) render(false);
   }, true);
 
+  // ---------- Minha localização ----------
+  function localizar(depois) {
+    if (minhaPosicao) return depois();
+    if (!navigator.geolocation) return alert("Seu navegador não permite localização.");
+    $("perto").textContent = "Localizando…";
+    navigator.geolocation.getCurrentPosition((p) => {
+      minhaPosicao = { lat: p.coords.latitude, lng: p.coords.longitude };
+      meuPonto = L.circleMarker([minhaPosicao.lat, minhaPosicao.lng], { radius: 8, color: "#1f6feb", fillOpacity: .9 })
+        .addTo(mapa).bindPopup("Você está aqui");
+      $("perto").textContent = "📍 Ordenado por distância";
+      depois();
+    }, () => {
+      $("perto").textContent = "📍 Leilões perto de mim";
+      $("f-distancia").value = "";
+      alert("Não foi possível obter sua localização. Confira se o site tem permissão de localização.");
+    }, { enableHighAccuracy: false, timeout: 15000, maximumAge: 600000 });
+  }
+
+  $("perto").addEventListener("click", () => localizar(() => {
+    mapa.setView([minhaPosicao.lat, minhaPosicao.lng], 7);
+    render(false);
+  }));
+  $("f-distancia").addEventListener("input", () => {
+    if (!$("f-distancia").value) return render(false);
+    localizar(() => render(true));
+  });
+
   let espera;
   $("busca").addEventListener("input", () => {
     clearTimeout(espera);
@@ -281,24 +383,8 @@
   });
   $("f-uf").addEventListener("input", () => render(true));
   $("so-favoritos").addEventListener("input", () => render($("so-favoritos").checked));
-  ["f-tipo", "f-modalidade", "f-periodo", "sem-virtuais", "com-recintos"].forEach((id) =>
+  ["f-tipo", "f-modalidade", "f-periodo", "f-raca", "sem-virtuais", "com-recintos"].forEach((id) =>
     $(id).addEventListener("input", () => render(false)));
-
-  $("perto").addEventListener("click", () => {
-    if (!navigator.geolocation) return alert("Seu navegador não permite localização.");
-    $("perto").textContent = "Localizando…";
-    navigator.geolocation.getCurrentPosition((p) => {
-      minhaPosicao = { lat: p.coords.latitude, lng: p.coords.longitude };
-      L.circleMarker([minhaPosicao.lat, minhaPosicao.lng], { radius: 8, color: "#1f6feb", fillOpacity: .9 })
-        .addTo(mapa).bindPopup("Você está aqui");
-      mapa.setView([minhaPosicao.lat, minhaPosicao.lng], 7);
-      $("perto").textContent = "📍 Ordenado por distância";
-      render(false);
-    }, () => {
-      $("perto").textContent = "📍 Leilões perto de mim";
-      alert("Não foi possível obter sua localização.");
-    });
-  });
 
   $("alternar").addEventListener("click", () => {
     mapa.closePopup();
@@ -310,5 +396,40 @@
     ? `Dados atualizados em ${paraData(window.LEILOES_ATUALIZADO).toLocaleDateString("pt-BR")}`
     : "Rode scripts/gerar_dados.py para gerar os dados.";
 
-  render(false);
+  // Link compartilhado (…?busca=Nome do leilão): já abre filtrado
+  const buscaInicial = new URLSearchParams(location.search).get("busca");
+  if (buscaInicial) $("busca").value = buscaInicial;
+  render(Boolean(buscaInicial));
+
+  // ---------- Instalar como app (PWA) ----------
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    navigator.serviceWorker.register("sw.js").catch(() => { /* segue sem modo app */ });
+  }
+  let pedidoInstalar = null;
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    pedidoInstalar = e;
+    $("instalar").hidden = false;
+  });
+  $("instalar").addEventListener("click", async () => {
+    if (!pedidoInstalar) return;
+    pedidoInstalar.prompt();
+    await pedidoInstalar.userChoice;
+    pedidoInstalar = null;
+    $("instalar").hidden = true;
+  });
+  window.addEventListener("appinstalled", () => { $("instalar").hidden = true; });
+  // iPhone não tem o aviso de instalar: mostra a dica uma vez
+  const ehIphone = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.navigator.standalone;
+  if (ehIphone) {
+    let visto = false;
+    try { visto = localStorage.getItem("mapa-leiloes:dica-ios") === "1"; } catch (e) { /* ignora */ }
+    if (!visto) {
+      $("dica-ios").hidden = false;
+      $("dica-ios").querySelector("button").addEventListener("click", () => {
+        $("dica-ios").hidden = true;
+        try { localStorage.setItem("mapa-leiloes:dica-ios", "1"); } catch (e) { /* ignora */ }
+      });
+    }
+  }
 })();
