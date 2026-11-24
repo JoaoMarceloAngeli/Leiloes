@@ -1,103 +1,6 @@
 // Arquivo gerado por scripts/gerar_dados.py - não edite à mão
-window.LEILOES_ATUALIZADO = "2026-11-23";
+window.LEILOES_ATUALIZADO = "2026-11-24";
 window.LEILOES = [
- {
-  "nome": "Leilão semanal - Brasil Leilões",
-  "data": "2026-11-23",
-  "hora": "",
-  "cidade": "Porangatu",
-  "uf": "GO",
-  "local": "Brasil Leilões",
-  "leiloeira": "Brasil Leilões",
-  "tipo": "",
-  "modalidade": "Presencial",
-  "raca": "",
-  "link": "https://maps.app.goo.gl/Jt48Wp2jd14m2wt77",
-  "fonte": "recinto (dia fixo)",
-  "previsto": true,
-  "lat": -13.439003,
-  "lng": -49.126895
- },
- {
-  "nome": "1º Leilão Virtual Genética Nacional - Fazenda Nova & Parceiros - Etapa Prime",
-  "data": "2026-11-23",
-  "hora": "19:00",
-  "cidade": "Araçatuba",
-  "uf": "SP",
-  "local": "Transmissão: Canal do Boi",
-  "leiloeira": "Central Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "",
-  "link": "https://arrobaplay.com/leiloes/1-leilao-virtual-genetica",
-  "fonte": "canal_do_boi",
-  "lat": -21.2076,
-  "lng": -50.4401
- },
- {
-  "nome": "Leilão Virtual Serra & Cerrado",
-  "data": "2026-11-23",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91730-leilao-virtual-serra-cerrado",
-  "fonte": "programa_leiloes, canal_do_criador",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
-  "nome": "86º Remate Gado de Qualidade",
-  "data": "2026-11-23",
-  "hora": "19:00",
-  "cidade": "Quaraí",
-  "uf": "RS",
-  "local": "Transmissão: Lance Rural",
-  "leiloeira": "",
-  "tipo": "Corte",
-  "modalidade": "Transmitido na TV",
-  "raca": "",
-  "link": "https://canaldocriador.com.br/leilao/86o-remate-gado-de-qualidade/",
-  "fonte": "canal_do_criador",
-  "lat": -30.384,
-  "lng": -56.4483
- },
- {
-  "nome": "Leilão Agropecuária Prado's - Seleção Baby",
-  "data": "2026-11-23",
-  "hora": "19:30",
-  "cidade": "Maceió",
-  "uf": "AL",
-  "local": "Transmissão: Remate Web",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Transmitido na TV",
-  "raca": "Nelore Pintado",
-  "link": "https://programaleiloes.com/agenda/leilao/91635-leilao-agropecuaria-prado-s-selecao-baby",
-  "fonte": "programa_leiloes",
-  "lat": -9.66599,
-  "lng": -35.735
- },
- {
-  "nome": "Leilão Virtual Bezerros Camparino - Touros do Futuro",
-  "data": "2026-11-23",
-  "hora": "20:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Reprodutores",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91590-leilao-virtual-bezerros-camparino-touros-do-futuro",
-  "fonte": "programa_leiloes, canal_do_criador",
-  "lat": -23.304,
-  "lng": -51.1691
- },
  {
   "nome": "Leilão semanal - Mara Rosa Leilões",
   "data": "2026-11-24",
@@ -2282,6 +2185,23 @@ window.LEILOES = [
   "lng": -54.6295
  },
  {
+  "nome": "Leilão semanal - Brasil Leilões",
+  "data": "2026-12-21",
+  "hora": "",
+  "cidade": "Porangatu",
+  "uf": "GO",
+  "local": "Brasil Leilões",
+  "leiloeira": "Brasil Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/Jt48Wp2jd14m2wt77",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -13.439003,
+  "lng": -49.126895
+ },
+ {
   "nome": "Vitrine Holandês - Sítio Perilão",
   "data": "2026-12-28",
   "hora": "09:00",
@@ -2482,3 +2402,4 @@ window.RECINTOS = [
   "fonte": "google_maps (link enviado)"
  }
 ];
+window.PRECOS = {"fonte": "Conab - preço recebido pelo produtor (boi gordo)", "baixado_em": "2026-11-24", "por_uf": {"BA": {"arroba": 388.8, "kg": 25.92, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}, "GO": {"arroba": 375.45, "kg": 25.03, "semana": "09/11 a 13/11/2026", "variacao_4sem": 6.1}, "MG": {"arroba": 382.35, "kg": 25.49, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.3}, "MS": {"arroba": 385.5, "kg": 25.7, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.0}, "MT": {"arroba": 371.55, "kg": 24.77, "semana": "16/11 a 20/11/2026", "variacao_4sem": 6.6}, "PA": {"arroba": 380.85, "kg": 25.39, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "PR": {"arroba": 400.05, "kg": 26.67, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "SP": {"arroba": 391.35, "kg": 26.09, "semana": "16/11 a 20/11/2026", "variacao_4sem": 7.1}, "TO": {"arroba": 381.6, "kg": 25.44, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}}};

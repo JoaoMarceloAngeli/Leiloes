@@ -41,6 +41,13 @@
   const textoRaca = (it) => semAcento(" " + [it.raca, it.nome].join(" ") + " ");
   const temRaca = (it, raca) => new RegExp("[^a-z]" + semAcento(raca) + "[^a-z]").test(textoRaca(it));
 
+  // ---------- Preço do boi gordo (Conab) ----------
+  const PRECOS = (window.PRECOS && window.PRECOS.por_uf) || {};
+  const real = (v) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  const variacao = (v) => v == null ? "" : `${v > 0 ? "▲" : v < 0 ? "▼" : "="} ${Math.abs(v).toLocaleString("pt-BR")}%`;
+  const linhaPreco = (uf) => PRECOS[uf]
+    ? `Boi gordo em ${uf}: ${real(PRECOS[uf].arroba)}/@ (Conab, ${PRECOS[uf].semana})` : "";
+
   // ---------- Favoritos (guardados só neste navegador) ----------
   const CHAVE_FAV = "mapa-leiloes:favoritos";
   let favoritos = new Set();
@@ -137,6 +144,7 @@
         : (l.leiloeira ? `<p>Leiloeira: ${esc(l.leiloeira)}</p>` : "")}
       <p>${[l.tipo, l.raca, l.modalidade].filter(Boolean).map(esc).join(" · ")}</p>
       ${link && !l.previsto ? `<p><a href="${esc(link)}" target="_blank" rel="noopener">Ver catálogo / transmissão →</a></p>` : ""}
+      ${PRECOS[l.uf] && !ehVirtual(l) ? `<p class="preco-card">💰 ${esc(linhaPreco(l.uf))}</p>` : ""}
       ${botoesAcao(l)}
     </div>`;
   }
@@ -197,7 +205,8 @@
   RACAS.filter((r) => soLeiloes.some((l) => temRaca(l, r)))
     .forEach((r) => $("f-raca").add(new Option(r, r)));
 
-  function filtrados() {
+  let diaEscolhido = "";   // calendário: mostra só um dia
+  function filtrados(ignorarDia) {
     const termo = semAcento($("busca").value.trim());
     const uf = $("f-uf").value, tipo = $("f-tipo").value, mod = $("f-modalidade").value, raca = $("f-raca").value;
     const dias = Number($("f-periodo").value);
@@ -214,6 +223,7 @@
       if (raio && minhaPosicao && distanciaKm(minhaPosicao, it) > raio) return false;
       if (termo && !semAcento([it.nome, it.cidade, it.uf, it.leiloeira, it.raca, it.local, it.obs]
         .join(" ")).includes(termo)) return false;
+      if (diaEscolhido && !ignorarDia && (it.recinto || it.data !== diaEscolhido)) return false;
       if (it.recinto) return comRecintos && !tipo && !mod && !raca && !temData(it);   // local sem data, tipo, raça
       return (!semVirtuais || !ehVirtual(it)) &&
         (!tipo || it.tipo === tipo) &&
@@ -269,6 +279,10 @@
 
     const nL = lista.filter((it) => !it.recinto).length, nR = lista.length - nL;
     const cidades = new Set(lista.map((it) => it.cidade + it.uf)).size;
+    desenharCalendario();
+    atualizarPrecos();
+    $("dia-escolhido").hidden = !diaEscolhido;
+    if (diaEscolhido) $("dia-escolhido").querySelector("span").textContent = "Só " + fmtDataLonga(diaEscolhido);
     const raio = Number($("f-distancia").value);
     $("resumo").textContent = `${nL} leilão(ões)${nR ? ` e ${nR} local(is) sem data` : ""} em ${cidades} cidade(s)` +
       (minhaPosicao ? (raio ? ` · até ${raio} km de você` : " · mais próximos primeiro") : "");
@@ -284,9 +298,9 @@
   // Rola só a lista (nunca a página), e só se ela estiver visível
   function rolarAte(li) {
     if (!listaVisivel()) return;
-    const caixa = celular.matches ? $("painel") : $("lista");
+    const caixa = $("painel");
     const c = caixa.getBoundingClientRect(), r = li.getBoundingClientRect();
-    const topo = celular.matches ? $("painel").querySelector("header").offsetHeight : 0;
+    const topo = caixa.querySelector("header").offsetHeight;
     if (r.top < c.top + topo) caixa.scrollTop -= c.top + topo - r.top + 8;
     else if (r.bottom > c.bottom) caixa.scrollTop += r.bottom - c.bottom + 8;
   }
@@ -395,6 +409,98 @@
   $("rodape").textContent = window.LEILOES_ATUALIZADO
     ? `Dados atualizados em ${paraData(window.LEILOES_ATUALIZADO).toLocaleDateString("pt-BR")}`
     : "Rode scripts/gerar_dados.py para gerar os dados.";
+
+  // ---------- Quadro de preços ----------
+  function atualizarPrecos() {
+    const ufs = Object.keys(PRECOS);
+    if (!ufs.length) { $("precos").hidden = true; return; }
+    const uf = $("f-uf").value;
+    $("precos").hidden = false;
+    $("precos-titulo").textContent = PRECOS[uf]
+      ? `💰 Boi gordo ${uf}: ${real(PRECOS[uf].arroba)}/@ ${variacao(PRECOS[uf].variacao_4sem)}`
+      : "💰 Preço da arroba do boi gordo";
+    $("precos-tabela").innerHTML = ufs.sort().map((u) => `<tr class="${u === uf ? "ativo" : ""}">
+        <td>${esc(u)}</td><td>${esc(real(PRECOS[u].arroba))}</td>
+        <td class="${PRECOS[u].variacao_4sem > 0 ? "sobe" : PRECOS[u].variacao_4sem < 0 ? "desce" : ""}">${esc(variacao(PRECOS[u].variacao_4sem))}</td>
+        <td>${esc(PRECOS[u].semana.replace(/\/\d{4}$/, ""))}</td></tr>`).join("");
+  }
+
+  // ---------- Calendário ----------
+  const mesVisto = new Date(); mesVisto.setDate(1); mesVisto.setHours(0, 0, 0, 0);
+  const isoDia = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  function desenharCalendario() {
+    if ($("calendario").hidden) return;
+    const porDia = {};
+    filtrados(true).forEach((it) => { if (!it.recinto) porDia[it.data] = (porDia[it.data] || 0) + 1; });
+    const hoje = isoDia(new Date());
+    const ano = mesVisto.getFullYear(), mes = mesVisto.getMonth();
+    const nomeMes = mesVisto.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+    $("cal-mes").textContent = nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1);
+    let html = ["D", "S", "T", "Q", "Q", "S", "S"].map((d) => `<span class="cal-cab">${d}</span>`).join("");
+    html += "<span></span>".repeat(new Date(ano, mes, 1).getDay());
+    for (let d = 1; d <= new Date(ano, mes + 1, 0).getDate(); d++) {
+      const iso = isoDia(new Date(ano, mes, d)), n = porDia[iso] || 0;
+      const classes = ["cal-dia", iso < hoje ? "passado" : "", iso === hoje ? "hoje" : "",
+        n ? "tem" : "", iso === diaEscolhido ? "escolhido" : ""].filter(Boolean).join(" ");
+      html += `<button type="button" class="${classes}" data-dia="${iso}" ${n ? "" : "disabled"}
+        title="${n ? n + " leilão(ões)" : "Sem leilões"}">${d}${n ? `<small>${n}</small>` : ""}</button>`;
+    }
+    $("cal-grade").innerHTML = html;
+  }
+  $("ver-calendario").addEventListener("click", () => {
+    $("calendario").hidden = !$("calendario").hidden;
+    $("ver-calendario").classList.toggle("ativo", !$("calendario").hidden);
+    if ($("calendario").hidden) diaEscolhido = "";
+    render(false);
+  });
+  $("cal-ant").addEventListener("click", () => { mesVisto.setMonth(mesVisto.getMonth() - 1); desenharCalendario(); });
+  $("cal-prox").addEventListener("click", () => { mesVisto.setMonth(mesVisto.getMonth() + 1); desenharCalendario(); });
+  $("cal-grade").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-dia]");
+    if (!b || b.disabled) return;
+    diaEscolhido = diaEscolhido === b.dataset.dia ? "" : b.dataset.dia;
+    render(Boolean(diaEscolhido));
+  });
+  $("dia-escolhido").querySelector("button").addEventListener("click", () => { diaEscolhido = ""; render(false); });
+
+  // ---------- Resumo da semana (para mandar no WhatsApp) ----------
+  function textoResumo() {
+    const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+    const fim = new Date(hoje.getTime() + 7 * 864e5);
+    const lista = filtrados(true).filter((it) => !it.recinto && paraData(it.data) < fim)
+      .sort((a, b) => (a.data + a.hora).localeCompare(b.data + b.hora));
+    const uf = $("f-uf").value;
+    const titulo = `🐂 *Leilões de gado${uf ? " em " + uf : ""}*\n${hoje.toLocaleDateString("pt-BR")} a ${
+      new Date(fim.getTime() - 864e5).toLocaleDateString("pt-BR")}`;
+    if (!lista.length) return titulo + "\n\nNenhum leilão nos próximos 7 dias com esses filtros.";
+    const MAX = 40;
+    let dia = "";
+    const linhas = [titulo];
+    lista.slice(0, MAX).forEach((it) => {
+      if (it.data !== dia) { dia = it.data; linhas.push("", `*${fmtDataLonga(it.data)}*`); }
+      linhas.push(`• ${it.hora ? it.hora + " " : ""}${it.nome} – ${it.cidade}/${it.uf}${ehVirtual(it) ? " (virtual)" : ""}${it.previsto ? " (previsto)" : ""}`);
+    });
+    if (lista.length > MAX) linhas.push("", `…e mais ${lista.length - MAX}. Escolha um estado para ver todos.`);
+    if (PRECOS[uf]) linhas.push("", `💰 ${linhaPreco(uf)}`);
+    if (ENDERECO_SITE) linhas.push("", `Mapa completo: ${ENDERECO_SITE}`);
+    return linhas.join("\n");
+  }
+  const dialogo = $("dialogo-resumo");
+  $("resumo-semana").addEventListener("click", () => {
+    $("resumo-texto").value = textoResumo();
+    if (dialogo.showModal) dialogo.showModal(); else dialogo.setAttribute("open", "");
+  });
+  $("resumo-zap").addEventListener("click", () =>
+    window.open(`https://wa.me/?text=${encodeURIComponent($("resumo-texto").value)}`, "_blank", "noopener"));
+  $("resumo-copiar").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText($("resumo-texto").value); }
+    catch (e) { $("resumo-texto").select(); document.execCommand("copy"); }
+    $("resumo-copiar").textContent = "Copiado ✓";
+    setTimeout(() => { $("resumo-copiar").textContent = "Copiar texto"; }, 2000);
+  });
+  $("resumo-fechar").addEventListener("click", () => {
+    if (dialogo.close) dialogo.close(); else dialogo.removeAttribute("open");
+  });
 
   // Link compartilhado (…?busca=Nome do leilão): já abre filtrado
   const buscaInicial = new URLSearchParams(location.search).get("busca");

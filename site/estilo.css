@@ -181,3 +181,49 @@ input:focus, select:focus { outline: 2px solid var(--verde); outline-offset: 0; 
 .dica button { margin-left: 6px; padding: 2px 8px; font-size: 12px; }
 [hidden] { display: none !important; }
 @media (max-width: 760px) { .acao { padding: 8px 12px; font-size: 14px; } }
+
+/* Quadro de preços */
+#precos { border-bottom: 1px solid var(--borda); padding: 8px 16px; background: var(--fundo-2); }
+#precos summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--marrom-escuro); }
+#precos table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+#precos th { text-align: left; font-weight: 600; color: var(--texto-2); border-bottom: 1px solid var(--borda); padding: 3px 4px; }
+#precos td { padding: 3px 4px; border-bottom: 1px solid var(--borda); }
+#precos tr.ativo td { background: var(--verde-claro); font-weight: 700; }
+#precos .sobe { color: var(--verde-escuro); }
+#precos .desce { color: #b03a2e; }
+.fonte-precos { font-size: 11px; color: var(--texto-2); margin: 6px 0 2px; }
+.preco-card { font-size: 12px; color: var(--marrom-escuro); }
+
+/* Calendário */
+#ver-calendario.ativo { background: var(--verde-claro); border-color: var(--verde); color: var(--verde-escuro); font-weight: 600; }
+#calendario { padding: 10px 16px; border-bottom: 1px solid var(--borda); }
+.cal-topo { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.cal-topo strong { color: var(--verde-escuro); }
+.cal-topo button { padding: 2px 12px; font-size: 18px; }
+#cal-grade { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; text-align: center; }
+.cal-cab { font-size: 11px; font-weight: 700; color: var(--texto-2); }
+.cal-dia { position: relative; padding: 6px 0 12px; font-size: 13px; border-radius: 6px; background: transparent; border: 1px solid transparent; }
+.cal-dia:disabled { color: #b9b2a5; cursor: default; }
+.cal-dia.tem { background: var(--verde-claro); border-color: var(--verde); font-weight: 700; color: var(--verde-escuro); }
+.cal-dia.hoje { outline: 2px solid var(--marrom); outline-offset: -2px; }
+.cal-dia.escolhido { background: var(--verde); color: #1f3d1c; }
+.cal-dia small { position: absolute; left: 0; right: 0; bottom: 1px; font-size: 10px; font-weight: 600; }
+.cal-dia.passado:not(.tem) { opacity: .5; }
+#dia-escolhido { margin: 0; padding: 8px 16px; background: var(--verde-claro); font-size: 14px; font-weight: 600;
+  color: var(--verde-escuro); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+#dia-escolhido[hidden] { display: none; }
+#dia-escolhido button { font-size: 12px; padding: 4px 8px; }
+
+/* Resumo da semana */
+#dialogo-resumo { width: min(520px, calc(100vw - 24px)); border: 1px solid var(--borda); border-radius: 12px;
+  padding: 16px; color: var(--texto); background: var(--fundo); }
+#dialogo-resumo::backdrop { background: rgba(0,0,0,.35); }
+#dialogo-resumo h2 { margin: 0 0 6px; font-size: 18px; color: var(--verde-escuro); }
+.dica-resumo { margin: 0 0 8px; font-size: 13px; color: var(--texto-2); }
+#resumo-texto { width: 100%; font-family: inherit; font-size: 13px; resize: vertical; }
+
+/* Painel inteiro rola junto (filtros, preços, calendário e lista); o título fica fixo */
+#painel { overflow-y: auto; overscroll-behavior: contain; }
+#painel header { position: sticky; top: 0; z-index: 2; }
+#lista { overflow: visible; flex: none; }
+#rodape { margin-top: auto; }

@@ -26,6 +26,17 @@ tipo, modalidade e período, busca, e "leilões perto de mim".
 | `scripts/coletores/modelo_coletor.py` | Modelo para criar um coletor por fonte |
 | `site/` | O mapa (Leaflet + OpenStreetMap, gratuito) |
 
+## O que o site faz
+
+- **Mapa e lista** com filtros por estado, tipo, modalidade, período, **raça** e **distância** (até 50/100/200/300 km).
+- **Card do leilão:** favoritar (★), **WhatsApp** (texto pronto com link que abre o mapa filtrado),
+  **Como chegar** (Google Maps), **Waze** e **Lembrar** (arquivo de agenda com aviso um dia antes).
+- **Calendário** do mês com a quantidade de leilões por dia; um toque mostra só aquele dia.
+- **Resumo da semana:** texto dos próximos 7 dias (com os filtros escolhidos) para mandar no WhatsApp.
+- **Preço da arroba do boi gordo** por estado (Conab, dados abertos, semanal), no painel e no card.
+- **Locais com dia fixo** (`dias` em `data/recintos.csv`) geram leilões previstos nas próximas 4 semanas.
+- **Modo app:** dá para instalar no celular (ícone na tela inicial) e abre mesmo com sinal fraco.
+
 ## Publicação e atualização automática
 
 O GitHub Actions ([.github/workflows/atualizar.yml](.github/workflows/atualizar.yml)) roda todos os coletores

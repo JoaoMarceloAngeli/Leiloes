@@ -1,0 +1,60 @@
+{
+ "fonte": "Conab - preço recebido pelo produtor (boi gordo)",
+ "baixado_em": "2026-11-24",
+ "por_uf": {
+  "BA": {
+   "arroba": 388.8,
+   "kg": 25.92,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 5.4
+  },
+  "GO": {
+   "arroba": 375.45,
+   "kg": 25.03,
+   "semana": "09/11 a 13/11/2026",
+   "variacao_4sem": 6.1
+  },
+  "MG": {
+   "arroba": 382.35,
+   "kg": 25.49,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 4.3
+  },
+  "MS": {
+   "arroba": 385.5,
+   "kg": 25.7,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 4.0
+  },
+  "MT": {
+   "arroba": 371.55,
+   "kg": 24.77,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 6.6
+  },
+  "PA": {
+   "arroba": 380.85,
+   "kg": 25.39,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 3.5
+  },
+  "PR": {
+   "arroba": 400.05,
+   "kg": 26.67,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 3.5
+  },
+  "SP": {
+   "arroba": 391.35,
+   "kg": 26.09,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 7.1
+  },
+  "TO": {
+   "arroba": 381.6,
+   "kg": 25.44,
+   "semana": "16/11 a 20/11/2026",
+   "variacao_4sem": 5.4
+  }
+ }
+}

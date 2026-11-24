@@ -49,11 +49,15 @@
         </select>
       </div>
       <button id="perto" type="button">📍 Leilões perto de mim</button>
+      <div class="linha">
+        <button id="ver-calendario" type="button">📅 Calendário</button>
+        <button id="resumo-semana" type="button">📋 Resumo da semana</button>
+      </div>
       <button id="instalar" type="button" hidden>📲 Instalar no celular</button>
       <p id="dica-ios" class="dica" hidden>📲 Para instalar no iPhone: toque em <b>Compartilhar</b> e depois em
         <b>Adicionar à Tela de Início</b>. <button type="button">Entendi</button></p>
       <label class="opcao"><input id="sem-virtuais" type="checkbox" autocomplete="off"> Esconder leilões virtuais</label>
-      <label class="opcao"><input id="com-recintos" type="checkbox" checked autocomplete="off"> Mostrar recintos de leilão</label>
+      <label class="opcao"><input id="com-recintos" type="checkbox" checked autocomplete="off"> Mostrar locais de leilão sem data</label>
       <label class="opcao"><input id="so-favoritos" type="checkbox" autocomplete="off"> <span class="estrela">★</span> Só favoritos</label>
       <div class="legenda">
         <span><span class="pino pino-mini"></span> Leilão presencial (com data)</span>
@@ -62,11 +66,43 @@
       </div>
     </div>
 
+    <details id="precos" hidden>
+      <summary id="precos-titulo">💰 Preço da arroba do boi gordo</summary>
+      <table>
+        <thead><tr><th>UF</th><th>R$/@</th><th>4 sem.</th><th>Semana</th></tr></thead>
+        <tbody id="precos-tabela"></tbody>
+      </table>
+      <p class="fonte-precos">Preço recebido pelo produtor, boi gordo. Fonte: Conab (dados abertos), atualizado
+        semanalmente. Bezerro e vaca não são publicados pela Conab.</p>
+    </details>
+
+    <section id="calendario" hidden>
+      <div class="cal-topo">
+        <button id="cal-ant" type="button" aria-label="Mês anterior">‹</button>
+        <strong id="cal-mes"></strong>
+        <button id="cal-prox" type="button" aria-label="Próximo mês">›</button>
+      </div>
+      <div id="cal-grade"></div>
+    </section>
+    <p id="dia-escolhido" hidden><span></span> <button type="button">✕ Ver todos os dias</button></p>
+
     <ul id="lista"></ul>
     <footer id="rodape"></footer>
   </aside>
 
   <main id="mapa"></main>
+
+  <dialog id="dialogo-resumo">
+    <h2>📋 Resumo da semana</h2>
+    <p class="dica-resumo">Leilões dos próximos 7 dias com os filtros escolhidos (estado, raça, distância…).
+      Para mandar só um estado, escolha o estado antes.</p>
+    <textarea id="resumo-texto" rows="14" readonly></textarea>
+    <div class="acoes">
+      <button id="resumo-zap" type="button" class="acao acao-zap">Enviar no WhatsApp</button>
+      <button id="resumo-copiar" type="button" class="acao">Copiar texto</button>
+      <button id="resumo-fechar" type="button" class="acao">Fechar</button>
+    </div>
+  </dialog>
   <button id="alternar" type="button" aria-label="Mostrar lista">☰ Lista</button>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

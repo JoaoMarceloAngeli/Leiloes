@@ -111,6 +111,12 @@ def ler_leiloes() -> list:
     return leiloes
 
 
+def ler_precos() -> dict:
+    """Preço do boi gordo por estado (scripts/precos_conab.py)."""
+    arq = DADOS / "precos_boi.json"
+    return json.loads(arq.read_text(encoding="utf-8")) if arq.exists() else {}
+
+
 def ler_recintos() -> list:
     """Locais fixos com leilões frequentes (data/recintos.csv, via scripts/adicionar_recinto.py)."""
     arq = DADOS / "recintos.csv"
@@ -193,7 +199,8 @@ def main() -> int:
         "// Arquivo gerado por scripts/gerar_dados.py - não edite à mão\n"
         f"window.LEILOES_ATUALIZADO = {json.dumps(hoje)};\n"
         f"window.LEILOES = {json.dumps(saida, ensure_ascii=False, indent=1)};\n"
-        f"window.RECINTOS = {json.dumps(recintos, ensure_ascii=False, indent=1)};\n",
+        f"window.RECINTOS = {json.dumps(recintos, ensure_ascii=False, indent=1)};\n"
+        f"window.PRECOS = {json.dumps(ler_precos(), ensure_ascii=False)};\n",
         encoding="utf-8",
     )
     print(f"{len(saida)} leilões gravados em {SAIDA.relative_to(RAIZ)} "

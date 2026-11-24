@@ -19,6 +19,9 @@ for c in COLETORES:
     if r.returncode != 0:
         falhas.append(c.stem)
 
+# Preço do boi gordo (Conab); se falhar, fica o arquivo anterior
+if subprocess.run([sys.executable, str(SCRIPTS / "precos_conab.py")]).returncode:
+    falhas.append("precos_conab")
 subprocess.run([sys.executable, str(SCRIPTS / "gerar_dados.py")], check=True)
 if falhas:
     print("ATENÇÃO, coletores com erro:", ", ".join(falhas))
