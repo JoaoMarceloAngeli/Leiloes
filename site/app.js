@@ -264,6 +264,17 @@
     return li;
   }
 
+  const FILTROS = ["f-uf", "f-tipo", "f-modalidade", "f-periodo", "f-raca", "f-distancia"];
+  $("abrir-filtros").addEventListener("click", () => {
+    const abrir = $("mais-filtros").hidden;
+    $("mais-filtros").hidden = !abrir;
+    $("abrir-filtros").setAttribute("aria-expanded", abrir);
+  });
+  $("limpar-filtros").addEventListener("click", () => {
+    FILTROS.forEach((id) => { $(id).value = ""; });
+    render(false);
+  });
+
   function render(enquadrar) {
     const lista = filtrados();
     grupo.clearLayers();
@@ -283,6 +294,9 @@
     atualizarPrecos();
     $("dia-escolhido").hidden = !diaEscolhido;
     if (diaEscolhido) $("dia-escolhido").querySelector("span").textContent = "Só " + fmtDataLonga(diaEscolhido);
+    const ativos = FILTROS.filter((id) => $(id).value).length;
+    $("n-filtros").hidden = !ativos;
+    $("n-filtros").textContent = ativos;
     const raio = Number($("f-distancia").value);
     $("resumo").textContent = `${nL} leilão(ões)${nR ? ` e ${nR} local(is) sem data` : ""} em ${cidades} cidade(s)` +
       (minhaPosicao ? (raio ? ` · até ${raio} km de você` : " · mais próximos primeiro") : "");

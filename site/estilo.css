@@ -42,6 +42,22 @@ h1 { margin: 0; font-size: 20px; color: var(--destaque); }
 
 .filtros { padding: 8px 16px 12px; display: grid; gap: 8px; border-bottom: 1px solid var(--borda); }
 .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.caixa-busca { position: relative; }
+.caixa-busca #busca { width: 100%; box-sizing: border-box; padding-right: 48px; }
+#abrir-filtros {
+  position: absolute; top: 3px; right: 3px; bottom: 3px; width: 40px; padding: 0;
+  display: grid; place-items: center; border: 0; border-radius: 6px;
+  background: transparent; color: var(--verde-escuro); cursor: pointer;
+}
+#abrir-filtros:hover, #abrir-filtros[aria-expanded="true"] { background: var(--verde-claro); }
+#n-filtros {
+  position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 4px;
+  box-sizing: border-box; border-radius: 9px; background: var(--marrom-escuro); color: #fff;
+  font-size: 11px; font-weight: 700; line-height: 18px; text-align: center;
+}
+#mais-filtros { display: grid; gap: 8px; }
+#mais-filtros[hidden] { display: none; }
+#limpar-filtros { background: transparent; color: var(--marrom-escuro); border-style: dashed; }
 input, select, button {
   font: inherit; font-size: 14px;
   padding: 8px 10px;

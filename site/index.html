@@ -24,7 +24,15 @@
     </header>
 
     <div class="filtros">
-      <input id="busca" type="search" placeholder="Buscar leilão, recinto, cidade, leiloeira, raça…" autocomplete="off">
+      <div class="caixa-busca">
+        <input id="busca" type="search" placeholder="Buscar leilão, cidade, raça…" autocomplete="off">
+        <button id="abrir-filtros" type="button" aria-expanded="false" aria-controls="mais-filtros" title="Filtros">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 5h18M6 12h12M10 19h4"
+            fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span id="n-filtros" hidden></span>
+        </button>
+      </div>
+      <div id="mais-filtros" hidden>
       <div class="linha">
         <select id="f-uf"><option value="">Todos os estados</option></select>
         <select id="f-tipo"><option value="">Todos os tipos</option></select>
@@ -47,6 +55,8 @@
           <option value="200">Até 200 km de mim</option>
           <option value="300">Até 300 km de mim</option>
         </select>
+      </div>
+      <button id="limpar-filtros" type="button">Limpar filtros</button>
       </div>
       <button id="perto" type="button">📍 Leilões perto de mim</button>
       <div class="linha">
