@@ -1,7 +1,7 @@
 // Modo app: abre mesmo com sinal fraco ou sem internet, mostrando a última agenda baixada.
 // Arquivos do site: tenta a internet primeiro (dados sempre frescos) e usa a cópia guardada se falhar.
 // Bibliotecas do mapa (unpkg): usa a cópia guardada, porque não mudam.
-const VERSAO = "mapa-leiloes-v1";
+const VERSAO = "mapa-leiloes-v2";
 const BASICO = ["./", "index.html", "estilo.css", "app.js", "leiloes.js", "manifest.webmanifest",
   "icone-192.png", "icone-512.png"];
 
@@ -21,7 +21,7 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(req.url);
 
   if (url.origin === location.origin) {
-    e.respondWith(fetch(req).then((resp) => {
+    e.respondWith(fetch(req, { cache: "no-cache" }).then((resp) => {
       if (resp.ok) { const copia = resp.clone(); caches.open(VERSAO).then((c) => c.put(req, copia)); }
       return resp;
     }).catch(() => caches.match(req, { ignoreSearch: true })
