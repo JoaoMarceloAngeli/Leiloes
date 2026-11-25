@@ -1,119 +1,6 @@
 // Arquivo gerado por scripts/gerar_dados.py - não edite à mão
-window.LEILOES_ATUALIZADO = "2026-11-24";
+window.LEILOES_ATUALIZADO = "2026-11-25";
 window.LEILOES = [
- {
-  "nome": "Leilão semanal - Mara Rosa Leilões",
-  "data": "2026-11-24",
-  "hora": "",
-  "cidade": "Mara Rosa",
-  "uf": "GO",
-  "local": "Mara Rosa Leilões",
-  "leiloeira": "Mara Rosa Leilões",
-  "tipo": "",
-  "modalidade": "Presencial",
-  "raca": "",
-  "link": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
-  "fonte": "recinto (dia fixo)",
-  "previsto": true,
-  "lat": -14.01469,
-  "lng": -49.086151
- },
- {
-  "nome": "Leilão Nova Geração Bela Alvorada - Nelore Zan & Convidados",
-  "data": "2026-11-24",
-  "hora": "19:00",
-  "cidade": "Araçatuba",
-  "uf": "SP",
-  "local": "Transmissão: Canal do Boi",
-  "leiloeira": "Central Leilões",
-  "tipo": "Geral",
-  "modalidade": "Virtual",
-  "raca": "Nelore",
-  "link": "https://arrobaplay.com/leiloes/leilao-nova-geracao-bela-alvorada-nelore-zan-convidados-de94",
-  "fonte": "canal_do_boi",
-  "lat": -21.2076,
-  "lng": -50.4401
- },
- {
-  "nome": "II Remate Estância Carcávio e Fazenda da Balança",
-  "data": "2026-11-24",
-  "hora": "19:00",
-  "cidade": "Porto Alegre",
-  "uf": "RS",
-  "local": "Transmissão: Lance Rural",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Geral",
-  "modalidade": "Transmitido na TV",
-  "raca": "Braford",
-  "link": "https://programaleiloes.com/agenda/leilao/91848-ii-remate-estancia-carcavio-e-fazenda-da-balanca",
-  "fonte": "programa_leiloes",
-  "lat": -30.0318,
-  "lng": -51.2065
- },
- {
-  "nome": "Leilão Especial Touros Fazenda Modotti",
-  "data": "2026-11-24",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Reprodutores",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91861-leilao-especial-touros-fazenda-modotti",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
-  "nome": "Leilão Virtual Elite Nelore Amor",
-  "data": "2026-11-24",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91634-leilao-virtual-elite-nelore-amor",
-  "fonte": "programa_leiloes, canal_do_criador",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
-  "nome": "Leilão Virtual Genética Varrela - Reprodutores e Matrizes",
-  "data": "2026-11-24",
-  "hora": "19:00",
-  "cidade": "Maceió",
-  "uf": "AL",
-  "local": "Transmissão: Agreste Leilões",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Reprodutores",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91776-leilao-virtual-genetica-varrela-reprodutores-e-matrizes",
-  "fonte": "programa_leiloes",
-  "lat": -9.66599,
-  "lng": -35.735
- },
- {
-  "nome": "2º Etapa Leilão Virtual Qualidade Corona",
-  "data": "2026-11-24",
-  "hora": "20:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91662-2-etapa-leilao-virtual-qualidade-corona",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
  {
   "nome": "Leilão semanal - Sindicato Rural de Porangatu",
   "data": "2026-11-25",
@@ -130,22 +17,6 @@ window.LEILOES = [
   "previsto": true,
   "lat": -13.443501,
   "lng": -49.140695
- },
- {
-  "nome": "Leilão Virtual Gado de Corte 25-11-2026 As 16h",
-  "data": "2026-11-25",
-  "hora": "16:00",
-  "cidade": "Aquidauana",
-  "uf": "MS",
-  "local": "Sede LN Leilões (leilão virtual)",
-  "leiloeira": "LN Leilões",
-  "tipo": "Corte",
-  "modalidade": "Virtual",
-  "raca": "",
-  "link": "https://www.lnleiloes.com.br/leilao-detalhes/1090",
-  "fonte": "ln_leiloes",
-  "lat": -20.4666,
-  "lng": -55.7868
  },
  {
   "nome": "Leilão Especial Fêmeas Fazenda Modotti",
@@ -391,6 +262,22 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
+  "nome": "Live Leilão Matinha",
+  "data": "2026-11-27",
+  "hora": "20:00",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "Estúdio de transmissão (local da fazenda não informado)",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Elite",
+  "modalidade": "Virtual",
+  "raca": "Nelore PO",
+  "link": "https://programaleiloes.com/agenda/leilao/91894-live-leilao-matinha",
+  "fonte": "programa_leiloes",
+  "lat": -23.304,
+  "lng": -51.1691
+ },
+ {
   "nome": "4° Grupo Suprema - 3ª Etapa",
   "data": "2026-11-28",
   "hora": "09:00",
@@ -567,7 +454,7 @@ window.LEILOES = [
   "lng": -51.1691
  },
  {
-  "nome": "Leilão Virtual Touros Jovens da Matinha",
+  "nome": "Leilão Virtual Circuito Matinha - Touros Jovens",
   "data": "2026-11-29",
   "hora": "09:00",
   "cidade": "Londrina",
@@ -577,7 +464,7 @@ window.LEILOES = [
   "tipo": "Reprodutores",
   "modalidade": "Virtual",
   "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91674-leilao-virtual-touros-jovens-da-matinha",
+  "link": "https://programaleiloes.com/agenda/leilao/91674-leilao-virtual-circuito-matinha-touros-jovens",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
@@ -728,20 +615,20 @@ window.LEILOES = [
   "lng": -44.0383
  },
  {
-  "nome": "Leilão Cpex Girolando",
+  "nome": "4° Grupo Suprema - 5ª Etapa",
   "data": "2026-11-30",
-  "hora": "20:00",
-  "cidade": "Mogi Mirim",
-  "uf": "SP",
-  "local": "Transmissão: Remate Web",
+  "hora": "19:30",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "Estúdio de transmissão (local da fazenda não informado)",
   "leiloeira": "Programa Leilões",
-  "tipo": "Leite",
-  "modalidade": "Transmitido na TV",
-  "raca": "Girolando",
-  "link": "https://programaleiloes.com/agenda/leilao/91873-leilao-cpex-girolando",
+  "tipo": "Geral",
+  "modalidade": "Virtual",
+  "raca": "",
+  "link": "https://programaleiloes.com/agenda/leilao/91895-4-grupo-suprema-5-etapa",
   "fonte": "programa_leiloes",
-  "lat": -22.4332,
-  "lng": -46.9532
+  "lat": -23.304,
+  "lng": -51.1691
  },
  {
   "nome": "Leilão Virtual Fazenda API - Etapa Matrizes",
@@ -758,6 +645,22 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -12.3513,
   "lng": -38.3791
+ },
+ {
+  "nome": "Mega Leilão CPEX 2026 - Edição Leite",
+  "data": "2026-11-30",
+  "hora": "20:00",
+  "cidade": "Mogi Mirim",
+  "uf": "SP",
+  "local": "Transmissão: Remate Web",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Leite",
+  "modalidade": "Transmitido na TV",
+  "raca": "Girolando",
+  "link": "https://programaleiloes.com/agenda/leilao/91873-mega-leilao-cpex-2026-edicao-leite",
+  "fonte": "programa_leiloes",
+  "lat": -22.4332,
+  "lng": -46.9532
  },
  {
   "nome": "Leilão semanal - Mara Rosa Leilões",
@@ -793,22 +696,6 @@ window.LEILOES = [
   "lng": -46.6395
  },
  {
-  "nome": "Cpex Gir",
-  "data": "2026-12-01",
-  "hora": "20:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Geral",
-  "modalidade": "Virtual",
-  "raca": "Gir",
-  "link": "https://programaleiloes.com/agenda/leilao/91874-cpex-gir",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
   "nome": "Matrizes Matinha - Edição Vacas Paridas",
   "data": "2026-12-01",
   "hora": "20:00",
@@ -823,6 +710,22 @@ window.LEILOES = [
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
+ },
+ {
+  "nome": "Mega Leilão CPEX 2026 - Edição Leite.",
+  "data": "2026-12-01",
+  "hora": "20:00",
+  "cidade": "Mogi Mirim",
+  "uf": "SP",
+  "local": "Transmissão: Remate Web",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Leite",
+  "modalidade": "Transmitido na TV",
+  "raca": "Gir",
+  "link": "https://programaleiloes.com/agenda/leilao/91874-mega-leilao-cpex-2026-edicao-leite",
+  "fonte": "programa_leiloes",
+  "lat": -22.4332,
+  "lng": -46.9532
  },
  {
   "nome": "Leilão semanal - Sindicato Rural de Porangatu",
@@ -874,20 +777,20 @@ window.LEILOES = [
   "lng": -46.6395
  },
  {
-  "nome": "Cpex Sindi",
+  "nome": "Mega Leilão CPEX 2026 - Edição Leite",
   "data": "2026-12-02",
   "hora": "20:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
+  "cidade": "Mogi Mirim",
+  "uf": "SP",
+  "local": "Transmissão: Remate Web",
   "leiloeira": "Programa Leilões",
-  "tipo": "Geral",
-  "modalidade": "Virtual",
+  "tipo": "Leite",
+  "modalidade": "Transmitido na TV",
   "raca": "Sindi",
-  "link": "https://programaleiloes.com/agenda/leilao/91875-cpex-sindi",
+  "link": "https://programaleiloes.com/agenda/leilao/91875-mega-leilao-cpex-2026-edicao-leite",
   "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
+  "lat": -22.4332,
+  "lng": -46.9532
  },
  {
   "nome": "Leilão semanal - Casa Branca Leilões",
@@ -1413,7 +1316,7 @@ window.LEILOES = [
   "hora": "19:00",
   "cidade": "Teresina",
   "uf": "PI",
-  "local": "Transmissão: Internet",
+  "local": "Transmissão: Remate Web",
   "leiloeira": "Programa Leilões",
   "tipo": "Elite",
   "modalidade": "Transmitido na TV",
@@ -1504,22 +1407,6 @@ window.LEILOES = [
   "previsto": true,
   "lat": -13.653724,
   "lng": -48.867818
- },
- {
-  "nome": "Leilão Touros Império",
-  "data": "2026-12-10",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Reprodutores",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91891-leilao-touros-imperio",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
  },
  {
   "nome": "Leilão Super Trinca - Nelore Scal",
@@ -1878,22 +1765,6 @@ window.LEILOES = [
   "lng": -49.140695
  },
  {
-  "nome": "Leilão Virtual Nelore Ibaneis",
-  "data": "2026-12-16",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91833-leilao-virtual-nelore-ibaneis",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
   "nome": "Touros Edap",
   "data": "2026-12-16",
   "hora": "20:00",
@@ -2074,20 +1945,21 @@ window.LEILOES = [
   "lng": -49.126895
  },
  {
-  "nome": "Vitrine Holandês - Sítio Perilão",
-  "data": "2026-12-28",
-  "hora": "09:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Leite",
-  "modalidade": "Virtual",
-  "raca": "Holandês",
-  "link": "https://programaleiloes.com/agenda/leilao/91885-vitrine-holandes-sitio-perilao",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
+  "nome": "Leilão semanal - Mara Rosa Leilões",
+  "data": "2026-12-22",
+  "hora": "",
+  "cidade": "Mara Rosa",
+  "uf": "GO",
+  "local": "Mara Rosa Leilões",
+  "leiloeira": "Mara Rosa Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/yXKs8EtZEYUYeAgj6",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.01469,
+  "lng": -49.086151
  }
 ];
 window.RECINTOS = [
@@ -2274,4 +2146,4 @@ window.RECINTOS = [
   "fonte": "google_maps (link enviado)"
  }
 ];
-window.PRECOS = {"fonte": "Conab - preço recebido pelo produtor (boi gordo)", "baixado_em": "2026-11-24", "por_uf": {"BA": {"arroba": 388.8, "kg": 25.92, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}, "GO": {"arroba": 375.45, "kg": 25.03, "semana": "09/11 a 13/11/2026", "variacao_4sem": 6.1}, "MG": {"arroba": 382.35, "kg": 25.49, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.3}, "MS": {"arroba": 385.5, "kg": 25.7, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.0}, "MT": {"arroba": 371.55, "kg": 24.77, "semana": "16/11 a 20/11/2026", "variacao_4sem": 6.6}, "PA": {"arroba": 380.85, "kg": 25.39, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "PR": {"arroba": 400.05, "kg": 26.67, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "SP": {"arroba": 391.35, "kg": 26.09, "semana": "16/11 a 20/11/2026", "variacao_4sem": 7.1}, "TO": {"arroba": 381.6, "kg": 25.44, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}}};
+window.PRECOS = {"fonte": "Conab - preço recebido pelo produtor (boi gordo)", "baixado_em": "2026-11-25", "por_uf": {"BA": {"arroba": 388.8, "kg": 25.92, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}, "GO": {"arroba": 375.45, "kg": 25.03, "semana": "09/11 a 13/11/2026", "variacao_4sem": 6.1}, "MG": {"arroba": 382.35, "kg": 25.49, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.3}, "MS": {"arroba": 385.5, "kg": 25.7, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.0}, "MT": {"arroba": 371.55, "kg": 24.77, "semana": "16/11 a 20/11/2026", "variacao_4sem": 6.6}, "PA": {"arroba": 380.85, "kg": 25.39, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "PR": {"arroba": 400.05, "kg": 26.67, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "SP": {"arroba": 391.35, "kg": 26.09, "semana": "16/11 a 20/11/2026", "variacao_4sem": 7.1}, "TO": {"arroba": 381.6, "kg": 25.44, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}}};
