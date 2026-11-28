@@ -1,87 +1,6 @@
 // Arquivo gerado por scripts/gerar_dados.py - não edite à mão
-window.LEILOES_ATUALIZADO = "2026-11-27";
+window.LEILOES_ATUALIZADO = "2026-11-28";
 window.LEILOES = [
- {
-  "nome": "Leilão semanal - Bambu Leilões",
-  "data": "2026-11-27",
-  "hora": "",
-  "cidade": "Campinorte",
-  "uf": "GO",
-  "local": "Bambu Leilões",
-  "leiloeira": "Bambu Leilões",
-  "tipo": "",
-  "modalidade": "Presencial",
-  "raca": "",
-  "link": "https://maps.app.goo.gl/XLkT73SYQnRxAddk7",
-  "fonte": "recinto (dia fixo)",
-  "previsto": true,
-  "lat": -14.29474,
-  "lng": -49.150588
- },
- {
-  "nome": "Leilão Snl Fest 2026",
-  "data": "2026-11-27",
-  "hora": "19:00",
-  "cidade": "Domingos Martins",
-  "uf": "ES",
-  "local": "Sítio Arara Azul",
-  "leiloeira": "Snl Agropecuária",
-  "tipo": "Geral",
-  "modalidade": "Presencial",
-  "raca": "Nelore",
-  "link": "https://www.nelore.org.br/agenda-de-leiloes/",
-  "fonte": "acnb_nelore, programa_leiloes, canal_do_criador",
-  "lat": -20.3603,
-  "lng": -40.6594
- },
- {
-  "nome": "Live Apresentação dos Animais - Circuito Matinha",
-  "data": "2026-11-27",
-  "hora": "19:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Elite",
-  "modalidade": "Virtual",
-  "raca": "Nelore PO",
-  "link": "https://programaleiloes.com/agenda/leilao/91894-live-apresentacao-dos-animais-circuito-matinha",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
-  "nome": "4° Grupo Suprema - 2ª Etapa",
-  "data": "2026-11-27",
-  "hora": "19:30",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Geral",
-  "modalidade": "Virtual",
-  "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91794-4-grupo-suprema-2-etapa",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
- {
-  "nome": "4° Grupo Suprema - 3ª Etapa",
-  "data": "2026-11-28",
-  "hora": "09:00",
-  "cidade": "Londrina",
-  "uf": "PR",
-  "local": "Estúdio de transmissão (local da fazenda não informado)",
-  "leiloeira": "Programa Leilões",
-  "tipo": "Geral",
-  "modalidade": "Virtual",
-  "raca": "",
-  "link": "https://programaleiloes.com/agenda/leilao/91787-4-grupo-suprema-3-etapa",
-  "fonte": "programa_leiloes",
-  "lat": -23.304,
-  "lng": -51.1691
- },
  {
   "nome": "Leilão Nelore do Golias",
   "data": "2026-11-28",
@@ -142,6 +61,22 @@ window.LEILOES = [
   "modalidade": "Virtual",
   "raca": "Nelore PO - Senepol",
   "link": "https://programaleiloes.com/agenda/leilao/91809-36-leilao-genetica-conquista-nelore-senepol",
+  "fonte": "programa_leiloes",
+  "lat": -23.304,
+  "lng": -51.1691
+ },
+ {
+  "nome": "4° Grupo Suprema - 3ª Etapa",
+  "data": "2026-11-28",
+  "hora": "12:00",
+  "cidade": "Londrina",
+  "uf": "PR",
+  "local": "Estúdio de transmissão (local da fazenda não informado)",
+  "leiloeira": "Programa Leilões",
+  "tipo": "Geral",
+  "modalidade": "Virtual",
+  "raca": "",
+  "link": "https://programaleiloes.com/agenda/leilao/91787-4-grupo-suprema-3-etapa",
   "fonte": "programa_leiloes",
   "lat": -23.304,
   "lng": -51.1691
@@ -1912,6 +1847,23 @@ window.LEILOES = [
   "previsto": true,
   "lat": -13.653724,
   "lng": -48.867818
+ },
+ {
+  "nome": "Leilão semanal - Bambu Leilões",
+  "data": "2026-12-25",
+  "hora": "",
+  "cidade": "Campinorte",
+  "uf": "GO",
+  "local": "Bambu Leilões",
+  "leiloeira": "Bambu Leilões",
+  "tipo": "",
+  "modalidade": "Presencial",
+  "raca": "",
+  "link": "https://maps.app.goo.gl/XLkT73SYQnRxAddk7",
+  "fonte": "recinto (dia fixo)",
+  "previsto": true,
+  "lat": -14.29474,
+  "lng": -49.150588
  }
 ];
 window.RECINTOS = [
@@ -2098,4 +2050,4 @@ window.RECINTOS = [
   "fonte": "google_maps (link enviado)"
  }
 ];
-window.PRECOS = {"fonte": "Conab - preço recebido pelo produtor (boi gordo)", "baixado_em": "2026-11-27", "por_uf": {"BA": {"arroba": 388.8, "kg": 25.92, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}, "GO": {"arroba": 375.45, "kg": 25.03, "semana": "09/11 a 13/11/2026", "variacao_4sem": 6.1}, "MG": {"arroba": 382.35, "kg": 25.49, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.3}, "MS": {"arroba": 385.5, "kg": 25.7, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.0}, "MT": {"arroba": 371.55, "kg": 24.77, "semana": "16/11 a 20/11/2026", "variacao_4sem": 6.6}, "PA": {"arroba": 380.85, "kg": 25.39, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "PR": {"arroba": 400.05, "kg": 26.67, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "SP": {"arroba": 391.35, "kg": 26.09, "semana": "16/11 a 20/11/2026", "variacao_4sem": 7.1}, "TO": {"arroba": 381.6, "kg": 25.44, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}}};
+window.PRECOS = {"fonte": "Conab - preço recebido pelo produtor (boi gordo)", "baixado_em": "2026-11-28", "por_uf": {"BA": {"arroba": 388.8, "kg": 25.92, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}, "GO": {"arroba": 375.45, "kg": 25.03, "semana": "09/11 a 13/11/2026", "variacao_4sem": 6.1}, "MG": {"arroba": 382.35, "kg": 25.49, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.3}, "MS": {"arroba": 385.5, "kg": 25.7, "semana": "16/11 a 20/11/2026", "variacao_4sem": 4.0}, "MT": {"arroba": 371.55, "kg": 24.77, "semana": "16/11 a 20/11/2026", "variacao_4sem": 6.6}, "PA": {"arroba": 380.85, "kg": 25.39, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "PR": {"arroba": 400.05, "kg": 26.67, "semana": "16/11 a 20/11/2026", "variacao_4sem": 3.5}, "SP": {"arroba": 391.35, "kg": 26.09, "semana": "16/11 a 20/11/2026", "variacao_4sem": 7.1}, "TO": {"arroba": 381.6, "kg": 25.44, "semana": "16/11 a 20/11/2026", "variacao_4sem": 5.4}}};
